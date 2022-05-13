@@ -42,3 +42,19 @@ void Systick_wait(uint32_t delay){
 
 
 
+
+
+// Time delay using busy wait.
+// This assumes  80 MHz system clock.
+void SysTick_Wait10ms(uint32_t delay){
+  uint32_t i;
+  for(i=0; i<delay; i++){
+    SysTick_Wait(800000);  // wait 10ms (assumes 80 MHz clock)
+  }
+}
+void SysTick_Wait1microsec(uint32_t delay){
+  uint32_t i;
+  for(i=0; i<delay; i++){
+    SysTick_Wait(80);  // wait 10us (assumes 80 MHz clock)
+  }
+}
