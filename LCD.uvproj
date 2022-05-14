@@ -430,6 +430,26 @@
               <FileType>1</FileType>
               <FilePath>.\keypad.c</FilePath>
             </File>
+            <File>
+              <FileName>interrupt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\interrupt.c</FilePath>
+            </File>
+            <File>
+              <FileName>leds.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\leds.c</FilePath>
+            </File>
+            <File>
+              <FileName>case B-C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\case B-C.c</FilePath>
+            </File>
+            <File>
+              <FileName>switch3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\switch3.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

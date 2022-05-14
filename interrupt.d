@@ -1,0 +1,10 @@
+.\interrupt.o: interrupt.c
+.\interrupt.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\interrupt.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\interrupt.o: C:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\interrupt.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\interrupt.o: LCD.h
+.\interrupt.o: systick.h
+.\interrupt.o: tm4c123gh6pm.h
+.\interrupt.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\interrupt.o: leds.h

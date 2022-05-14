@@ -1,5 +1,10 @@
-.\leds.o: LEDS.c
-.\leds.o: tm4c123gh6pm.h
+.\leds.o: leds.c
 .\leds.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\leds.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\leds.o: C:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\leds.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\leds.o: LCD.h
 .\leds.o: systick.h
-.\leds.o: case A.h
+.\leds.o: interrupt.h
+.\leds.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\leds.o: tm4c123gh6pm.h
