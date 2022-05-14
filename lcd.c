@@ -96,3 +96,25 @@ void LCD_OutChar(unsigned char letter){
   //SysTick_Wait(T40us);  // wait 40us
 }
 
+// Clear the LCD
+// Inputs: none
+// Outputs: none
+void LCD_Clear(void){
+  OutCmd(0x01);          // Clear Display
+	SysTick_Wait1microsec(1600);
+  //SysTick_Wait(T1600us); // wait 1.6ms
+  OutCmd(0x02);          // Cursor to home
+	SysTick_Wait1microsec(1600);
+  //SysTick_Wait(T1600us); // wait 1.6ms
+}
+
+//------------LCD_OutString------------
+// Output String (NULL termination)
+// Input: pointer to a NULL-terminated string to be transferred
+// Output: none
+void LCD_OutString(char *pt){
+  while(*pt){
+    LCD_OutChar(*pt);
+    pt++;
+  }
+}
