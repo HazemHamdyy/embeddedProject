@@ -76,3 +76,4 @@ void LCD_OutUDec(uint32_t n);
 // Output: none
 // Variable format 1 to 8 digits with no space before or after
 void LCD_OutUHex(uint32_t number);
+void OutCmd(unsigned char command);

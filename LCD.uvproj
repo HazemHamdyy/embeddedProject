@@ -440,6 +440,11 @@
               <FileType>1</FileType>
               <FilePath>.\LEDS.c</FilePath>
             </File>
+            <File>
+              <FileName>Beef.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Beef.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
