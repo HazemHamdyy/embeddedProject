@@ -7,8 +7,8 @@
 
 void keypad_Init(void){ 
 	
-  SYSCTL_RCGCGPIO_R |=0x11;
-	while((SYSCTL_PRGPIO_R & 0x11)==0){};
+ SYSCTL_RCGCGPIO_R |=0x3F;
+	while((SYSCTL_PRGPIO_R & 0x3F)==0);
 	GPIO_PORTE_LOCK_R =0X4C4F434B;
 	GPIO_PORTE_CR_R|=0X0F; 
 	GPIO_PORTE_DIR_R|= 0x0F; // set row pins 3-0 as output
