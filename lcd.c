@@ -49,7 +49,8 @@ void OutCmd(unsigned char command){
 // Outputs: none
 void LCD_Init(void){ volatile long delay;
   SYSCTL_RCGC2_R |= 0x00000003;  // 1) activate clock for Ports A and B
-  delay = SYSCTL_RCGC2_R;        // 2) no need to unlock
+	while((SYSCTL_PRGPIO_R & 0x00000003)==0){};
+  //delay = SYSCTL_RCGC2_R;        // 2) no need to unlock
   GPIO_PORTB_AMSEL_R &= ~0xFF;   // 3) disable analog function on PB7-0
   GPIO_PORTA_AMSEL_R &= ~0xC0;   //    disable analog function on PA7-6              
   GPIO_PORTB_PCTL_R = 0x00000000;   // 4) configure PB7-0 as GPIO   
@@ -116,5 +117,42 @@ void LCD_OutString(char *pt){
   while(*pt){
     LCD_OutChar(*pt);
     pt++;
+  }
+}
+
+//-----------------------LCD_OutUDec-----------------------
+// Output a 32-bit number in unsigned decimal format
+// Input: 32-bit number to be transferred
+// Output: none
+// Variable format 1-10 digits with no space before or after
+void LCD_OutUDec(uint32_t n){
+// This function uses recursion to convert decimal number
+//   of unspecified length as an ASCII string
+  if(n >= 10){
+    LCD_OutUDec(n/10);
+    n = n%10;
+  }
+  LCD_OutChar(n+'0'); /* n is between 0 and 9 */
+}
+
+//--------------------------LCD_OutUHex----------------------------
+// Output a 32-bit number in unsigned hexadecimal format
+// Input: 32-bit number to be transferred
+// Output: none
+// Variable format 1 to 8 digits with no space before or after
+void LCD_OutUHex(uint32_t number){
+// This function uses recursion to convert the number of
+//   unspecified length as an ASCII string
+  if(number >= 0x10){
+    LCD_OutUHex(number/0x10);
+    LCD_OutUHex(number%0x10);
+  }
+  else{
+    if(number < 0xA){
+      LCD_OutChar(number+'0');
+     }
+    else{
+      LCD_OutChar((number-0x0A)+'A');
+    }
   }
 }
