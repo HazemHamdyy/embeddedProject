@@ -21,22 +21,23 @@ void SystemInit(){}
 	*/
 int CookingTime(int weight)
 	{ double timeps;
-    timeps=	0.5*weight*60;
+    timeps=	0.2*weight*60;
 		return timeps;
 	}
 	
-void Beef(void)
+void chicken (void)
 { int weight,i,j;
 	char key;
 	//InitSW();
-	LCD_OutString("Beef weight?");
+	LCD_OutString("Chicken weight?");
 	//Set LCD Cursor to second line//
 	OutCmd(0xC0);
 	
 		if(((GPIO_PORTE_DATA_R&0x10)==0x10) && (GPIO_PORTF_DATA_R &0x11)==0x01) //SW2 should always be pressed and sw3 should be open 
 	{
 		key=keypad_getkey(); //CHECK NUMBER
-weightinput: 
+		
+		weightinput: 
 		weight=key;
 	 if((weight>=1) && (weight<=9)) 
 	{ 
