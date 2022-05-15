@@ -60,7 +60,7 @@ void GPIOPortF_Handler(void){
 		isPlay=false;
 			LEDS_OFF ();
 		break;}
-		if((!(GPIO_PORTF_DATA_R&1))&(GPIO_PORTE_DATA_R&0x10)){
+		if((!(GPIO_PORTF_DATA_R&1))&&(GPIO_PORTE_DATA_R&0x10)){
 		isPaused=false;
 			isPlay=true;
 			break;

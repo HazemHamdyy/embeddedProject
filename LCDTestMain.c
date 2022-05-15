@@ -15,7 +15,7 @@
 
 int y ;
  int time;
-char buffer2 [5];
+//char buffer2 [5];
 int main(void){
 	switch3_buzzer_init();
   unsigned char key ;
@@ -32,162 +32,29 @@ int main(void){
 while(1){
 	
  
-		 LCD_Clear();
+ 
+	LCD_Clear();
 		key=keypad_getkey();
 switch(key){
 case 'A':
 					LCD_OutString("Popcorn");
+          SysTick_Wait10ms(100);
           
-for(int i =0;i<=500;i++){
-SysTick_Wait10ms(1);
-		if(GPIO_PORTE_DATA_R&0x10){
-		GPIO_PORTF_DATA_R=0x0E;
-	
-	
-	
- 	if((!(GPIO_PORTF_DATA_R&1))){
-	LCD_Clear();
-isPlay=true;
-		      
-          x=6;
 
-          while(!(x==0)&isPlay){
-						 LEDS_ON();
-						 snprintf (buffer , 10 , "%d",x);
-						 //LCD_OutUDec(x);
-						LCD_OutString(buffer); 
-						 SysTick_Wait10ms(50);
-							LCD_Clear();	
-						x--;	
-				
-				}
-					isPlay=false;
-				
-		
-
-	
-			if(x==0)	{
-				LCD_OutString("FOOD IS READY");
-				
-				LEDS_BLINK_3times ();
-				
-			GPIO_PORTE_DATA_R|=0X20;
-			/*LEDS_OFF ();
-		GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;*/
-				
-				
-			
-			}
-					break;}else{}}}   
+					counting(0,60);
 
 			
 					break;
 case 'B':
-	/*
-	
-					LCD_OutString("Beef weight?  ");
-          OutCmd(0xC0); ////Set LCD Cursor to second line
-           SysTick_Wait10ms(10);
-    	
-
-	//char buffer2[5];
-	 //weight=keypad_getkey();
-dee:
- weight=keypad_getkey();
-if (weight!=0){
-
-	LCD_OutChar(weight);
-	SysTick_Wait10ms(10);
-	 int we=weight-'0';
-		 if((we>=1) && (we<=9)){
-     time=CookingTime_case_B(we);
-			 x=time/60; //minutes
-			 y=time -(x*60); //seconds
-			 snprintf(buffer,10,"%02d",x);
-			 strcat(buffer, ":");	
-			 snprintf(buffer2,10,"%02d",y);
-			 strcat(buffer,buffer2);
-			 LCD_Clear();
-	    LCD_OutString(buffer);
-			 
-			
-		 }else{
-		   LCD_Clear();
-			 LCD_OutString("Err");
-			 SysTick_Wait10ms(50);
-			 break;
-		 }
-			 
-		 
-for(int i =0;i<=500;i++){
-	
-	
-  SysTick_Wait10ms(10);
-	if(GPIO_PORTE_DATA_R&0x10){
-		GPIO_PORTF_DATA_R=0x0E;
-if((!(GPIO_PORTF_DATA_R&1))){
-   // SysTick_Wait1s(2); 
-		isPlay=true;
-		while(strcmp (buffer,"00:00")&isPlay){
-						LCD_Clear(); 
-						 LEDS_ON();
-						
-						for(int z=x;z>=0;z--)//i=x & j=y
-	              {for (int j=y;j>=0;j--)
-						       { 
-										 if(isPlay){
-											 	snprintf(buffer,10,"%02d",x);  //to convert minutes and seconds into strings
-								strcat(buffer, ":");			
-								snprintf(buffer2,10,"%02d",y);
-								strcat(buffer,buffer2);
-		
-								LCD_OutString(buffer);
-								 SysTick_Wait10ms(50); //display for 1 second 
-								LCD_Clear(); 
-									y--;
-										 
-										 }
-							
-									 }
-									 y=60;
-									 x--;
-								 }
-							LCD_Clear();	
-				}
-		break;
-					}}
-
-}   
-if((x==0)&(y==0)){
-LCD_OutString("FOOD IS READY");
-						//GPIO_PORTE_DATA_R|=0X20;
-			LEDS_BLINK_3times ();
-			LEDS_OFF ();
-}
-     
-				
-					break;
-		 
-}
-else
-{
-	
-	SysTick_Wait10ms(1);
-	
-	goto dee;
-	break;
-}
-	
-	*/
 
 
+       LCD_Clear();
 			LCD_OutString("Beef weight?");
           OutCmd(0xC0); ////Set LCD Cursor to second line
            SysTick_Wait10ms(10);
   
 
-	//char buffer2[5];
-	 //weight=keypad_getkey();
+	
 de:
  weight=keypad_getkey();
 if (weight!=0){
@@ -199,10 +66,10 @@ if (weight!=0){
      time=CookingTime_case_B(we);
 			 x=time/60; //minutes
 			 y=time -(x*60); //seconds
-			 snprintf(buffer,10,"%02d",x);
+			/* snprintf(buffer,10,"%02d",x);
 			 strcat(buffer, ":");	
 			 snprintf(buffer2,10,"%02d",y);
-			 strcat(buffer,buffer2);
+			 strcat(buffer,buffer2);*/
 			 LCD_Clear();
 	    LCD_OutString(buffer);
 			 
@@ -213,81 +80,20 @@ if (weight!=0){
 			 SysTick_Wait10ms(50);
 			 break;
 		 }
-			 
-		 
-for(int i =0;i<=500;i++){
 	
 	
-  SysTick_Wait10ms(10);
-	if(GPIO_PORTE_DATA_R&0x10){
-		GPIO_PORTF_DATA_R=0x0E;
-		for(int m=0;m<500;m++){
-			 SysTick_Wait10ms(10);
-		if(((GPIO_PORTF_DATA_R&01)==0)){
-    SysTick_Wait1s(2); 
-		isPlay=true;
-		while(strcmp (buffer,"00:00")&isPlay){
-						LCD_Clear(); 
-						 LEDS_ON();
-						
-						for(int z=x;z>=0;z--)//i=x & j=y
-	              {for (int j=y;j>=0;j--)
-						       { 
-										 if(isPlay){
-											 	snprintf(buffer,10,"%02d",x);  //to convert minutes and seconds into strings
-								strcat(buffer, ":");			
-								snprintf(buffer2,10,"%02d",y);
-								strcat(buffer,buffer2);
-		
-								LCD_OutString(buffer);
-								 SysTick_Wait10ms(50); //display for 1 second 
-								LCD_Clear(); 
-									y--;
-										 
-										 }
-							
-									 }
-									 y=60;
-									 x--;
-								 }
-							LCD_Clear();	
-								 break;
-				}
-					break;}}
- 	}}    
-if((x==0)&(y==0)){
-LCD_OutString("FOOD IS READY");
-						//GPIO_PORTE_DATA_R|=0X20;
-			LEDS_BLINK_3times ();
-			LEDS_OFF ();
-}
-					break;
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-}
+					counting(x,y);
+ 	}
+
 else
 {
 	
 	SysTick_Wait10ms(10);
 	
 	goto de;
-	break;
+
 }
-
-
-
-
-
-
-
-
-
+	break;
 
 
 case 'C':
@@ -311,8 +117,8 @@ if (weight!=0){
 			 y=time -(x*60); //seconds
 			 snprintf(buffer,10,"%02d",x);
 			 strcat(buffer, ":");	
-			 snprintf(buffer2,10,"%02d",y);
-			 strcat(buffer,buffer2);
+		/*	 snprintf(buffer2,10,"%02d",y);
+			 strcat(buffer,buffer2);*/
 			 LCD_Clear();
 	    LCD_OutString(buffer);
 			 
@@ -323,60 +129,9 @@ if (weight!=0){
 			 SysTick_Wait10ms(50);
 			 break;
 		 }
-			 
-		 
-for(int i =0;i<=500;i++){
-	
-	
-  SysTick_Wait10ms(10);
-	if(GPIO_PORTE_DATA_R&0x10){
-		GPIO_PORTF_DATA_R=0x0E;
- 	if(((GPIO_PORTF_DATA_R&01)==0)){
-    SysTick_Wait1s(2); 
-		isPlay=true;
-		while(strcmp (buffer,"00:00")&isPlay){
-						LCD_Clear(); 
-						 LEDS_ON();
-						
-						for(int z=x;z>=0;z--)//i=x & j=y
-	              {for (int j=y;j>=0;j--)
-						       { 
-										 if(isPlay){
-											 	snprintf(buffer,10,"%02d",x);  //to convert minutes and seconds into strings
-								strcat(buffer, ":");			
-								snprintf(buffer2,10,"%02d",y);
-								strcat(buffer,buffer2);
-		
-								LCD_OutString(buffer);
-								 SysTick_Wait10ms(50); //display for 1 second 
-								LCD_Clear(); 
-									y--;
-										 
-										 }
-							
-									 }
-									 y=60;
-									 x--;
-								 }
-							LCD_Clear();	
-								 break;
-				}
-					break;}}}    
-if((x==0)&(y==0)){
-LCD_OutString("FOOD IS READY");
-						//GPIO_PORTE_DATA_R|=0X20;
-			LEDS_BLINK_3times ();
-			LEDS_OFF ();
-}
-					break;
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
+
+		 counting(x,y);
+
 }
 else
 {
@@ -386,13 +141,14 @@ else
 	goto deh;
 	break;
 }
+break;
 	
 
 case 'D':
 					LCD_OutString("Cooking time?");
 					break;
 default:
-     LCD_OutString("nothing");
+     LCD_OutString("CHOOSE YOUR MEAL");
      break;
 }
   SysTick_Wait10ms(20);

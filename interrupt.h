@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include "stdbool.h"
 extern  int x ;
+//char buffer2 [5];
 
 extern  bool isPlay ;
 extern  bool isPaused ;
