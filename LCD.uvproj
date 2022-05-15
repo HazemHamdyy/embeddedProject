@@ -104,7 +104,7 @@
           <SimDllName>SARMCM3.DLL</SimDllName>
           <SimDllArguments>-MPU</SimDllArguments>
           <SimDlgDll>DCM.DLL</SimDlgDll>
-          <SimDlgDllArguments>-pCM4 </SimDlgDllArguments>
+          <SimDlgDllArguments>-pCM4 -dLaunchPadDLL</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
           <TargetDllArguments>-MPU</TargetDllArguments>
           <TargetDlgDll>TCM.DLL</TargetDlgDll>
@@ -431,14 +431,34 @@
               <FilePath>.\keypad.c</FilePath>
             </File>
             <File>
-              <FileName>caseD.c</FileName>
+              <FileName>casa A.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\caseD.c</FilePath>
+              <FilePath>.\casa A.c</FilePath>
+            </File>
+            <File>
+              <FileName>caseD2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\caseD2.c</FilePath>
             </File>
             <File>
               <FileName>lcdCommand.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\lcdCommand.c</FilePath>
+            </File>
+            <File>
+              <FileName>counting.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\counting.c</FilePath>
+            </File>
+            <File>
+              <FileName>leds.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\leds.c</FilePath>
+            </File>
+            <File>
+              <FileName>interrupt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\interrupt.c</FilePath>
             </File>
           </Files>
         </Group>

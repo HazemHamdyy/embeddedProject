@@ -1,0 +1,11 @@
+.\counting.o: counting.c
+.\counting.o: tm4c123gh6pm.h
+.\counting.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\counting.o: systick.h
+.\counting.o: leds.h
+.\counting.o: LCD.h
+.\counting.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\counting.o: C:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\counting.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\counting.o: interrupt.h
+.\counting.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h

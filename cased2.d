@@ -1,0 +1,10 @@
+.\cased2.o: caseD2.c
+.\cased2.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\cased2.o: tm4c123gh6pm.h
+.\cased2.o: Keypad.h
+.\cased2.o: LcdCommand.h
+.\cased2.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\cased2.o: LCD.h
+.\cased2.o: systick.h
+.\cased2.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\cased2.o: counting.h

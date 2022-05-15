@@ -45,8 +45,6 @@ addr  00 01 02 03 04 05 ... 0F
 // Initialize LCD
 // Inputs: none
 // Outputs: none
-
-#include <stdint.h>
 void LCD_Init(void);
 
 // Output a character to the LCD

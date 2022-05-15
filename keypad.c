@@ -7,7 +7,7 @@
 
 void keypad_Init(void){ 
 	
- SYSCTL_RCGCGPIO_R |=0x11;
+  SYSCTL_RCGCGPIO_R |=0x11;
 	while((SYSCTL_PRGPIO_R & 0x11)==0);
 	GPIO_PORTE_LOCK_R =0X4C4F434B;
 	GPIO_PORTE_CR_R|=0X0F; 
