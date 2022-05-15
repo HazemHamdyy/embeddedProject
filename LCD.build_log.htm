@@ -3,23 +3,15 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\HP\Downloads\CASE ABC\CASE ABC\LCD.uvproj
+C:\Users\HP\Downloads\CASE ABC\CASE ABC final\LCD.uvproj
 Project File Date:  05/14/2022
 
 <h2>Output:</h2>
 Build target 'LCD'
-compiling LCDTestMain.c...
-switch3.h(2): warning:  #1-D: last line of file ends without a newline
-  void GPIOPortE_Handler(void);
-LCDTestMain.c(165): warning:  #111-D: statement is unreachable
-        break;
-LCDTestMain.c(262): warning:  #111-D: statement is unreachable
-        break;
-LCDTestMain.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=5952 RO-data=68 RW-data=36 ZI-data=1124  
-".\LCD.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\HP\\Downloads\\CASE ABC\\CASE ABC\\LCD.axf" 
+Program Size: Code=6136 RO-data=68 RW-data=36 ZI-data=1124  
+".\LCD.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\HP\\Downloads\\CASE ABC\\CASE ABC final\\LCD.axf" 
 Connecting: Mode=JTAG, Speed=1000000Hz
 Erase Done.
 Programming Done.
@@ -27,5 +19,102 @@ Verify OK.
 </pre>
 </body>
 </html>
-Flash Download failed  -  Could not load file 'C:\Users\HP\Downloads\CASE ABC\CASE ABC\LCD.axf'
-lled
+CDTestMain.c: 3 warnings, 0 errors
+linking...
+Program Size: Code=6136 RO-data=68 RW-data=36 ZI-data=1124  
+".\LCD.axf" - 0 Error(s), 3 Warning(s).
+Load "C:\\Users\\HP\\Downloads\\CASE ABC\\CASE ABC final\\LCD.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+ash Download failed  -  Target DLL has been cancelled
+f" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+LCD.axf" - 3 Error(s), 4 Warning(s).
+Target not created
+Warning(s).
+Target not created
+Load "C:\\Users\\HP\\Downloads\\CASE ABC\\CASE ABC final\\LCD.axf" 
+_____^
+*** error 56: cannot open file
+Error: Flash Download failed  -  Could not load file 'C:\Users\HP\Downloads\CASE ABC\CASE ABC final\LCD.axf'
+{}}   
+LCDTestMain.c(81): warning:  #12-D: parsing restarts here after previous syntax error
+                                        break;
+LCDTestMain.c(82): error:  #169: expected a declaration
+  case 'B':
+LCDTestMain.c(85): error:  #79: expected a type specifier
+            OutCmd(0xC0); ////Set LCD Cursor to second line
+LCDTestMain.c(85): error:  #260-D: explicit type is missing ("int" assumed)
+            OutCmd(0xC0); ////Set LCD Cursor to second line
+LCDTestMain.c(85): error:  #147: declaration is incompatible with "void OutCmd(unsigned char)" (declared at line 27 of "LCD.h")
+            OutCmd(0xC0); ////Set LCD Cursor to second line
+LCDTestMain.c(86): error:  #79: expected a type specifier
+             SysTick_Wait10ms(10);
+LCDTestMain.c(86): error:  #260-D: explicit type is missing ("int" assumed)
+             SysTick_Wait10ms(10);
+LCDTestMain.c(86): error:  #147: declaration is incompatible with "void SysTick_Wait10ms(uint32_t)" (declared at line 4 of "systick.h")
+             SysTick_Wait10ms(10);
+LCDTestMain.c(91): error:  #77-D: this declaration has no storage class or type specifier
+  dee:
+LCDTestMain.c(91): error:  #65: expected a ";"
+  dee:
+LCDTestMain.c(93): error:  #169: expected a declaration
+  if (weight!=0){
+LCDTestMain.c(114): warning:  #12-D: parsing restarts here after previous syntax error
+                         break;
+LCDTestMain.c(115): error:  #169: expected a declaration
+                 }
+LCDTestMain.c(139): warning:  #12-D: parsing restarts here after previous syntax error
+                                                                 SysTick_Wait10ms(50); //display for 1 second 
+LCDTestMain.c(140): warning:  #1295-D: Deprecated declaration LCD_Clear - give arg types
+                                                                LCD_Clear(); 
+LCDTestMain.c(140): error:  #260-D: explicit type is missing ("int" assumed)
+                                                                LCD_Clear(); 
+LCDTestMain.c(140): error:  #147: declaration is incompatible with "void LCD_Clear(void)" (declared at line 38 of "LCD.h")
+                                                                LCD_Clear(); 
+LCDTestMain.c(141): error:  #77-D: this declaration has no storage class or type specifier
+                                                                        y--;
+LCDTestMain.c(141): error:  #65: expected a ";"
+                                                                        y--;
+LCDTestMain.c(143): error:  #169: expected a declaration
+                                                                                 }
+LCDTestMain.c(146): warning:  #12-D: parsing restarts here after previous syntax error
+                                                                         y=60;
+LCDTestMain.c(147): error:  #77-D: this declaration has no storage class or type specifier
+                                                                         x--;
+LCDTestMain.c(147): error:  #65: expected a ";"
+                                                                         x--;
+LCDTestMain.c(148): error:  #169: expected a declaration
+                                                                 }
+LCDTestMain.c(150): error:  #169: expected a declaration
+                                }
+LCDTestMain.c(152): error:  #169: expected a declaration
+                                        }
+LCDTestMain.c(163): warning:  #12-D: parsing restarts here after previous syntax error
+                                        break;
+LCDTestMain.c(165): error:  #169: expected a declaration
+  }
+LCDTestMain.c(178): warning:  #12-D: parsing restarts here after previous syntax error
+                                                                        LCD_OutString("Chicken weight?");
+LCDTestMain.c(179): error:  #79: expected a type specifier
+            OutCmd(0xC0); ////Set LCD Cursor to second line
+LCDTestMain.c(179): error:  #260-D: explicit type is missing ("int" assumed)
+            OutCmd(0xC0); ////Set LCD Cursor to second line
+LCDTestMain.c(180): error:  #79: expected a type specifier
+             SysTick_Wait10ms(10);
+LCDTestMain.c(180): error:  #260-D: explicit type is missing ("int" assumed)
+             SysTick_Wait10ms(10);
+LCDTestMain.c: 12 warnings, 30 errors
+".\LCD.axf" - 30 Error(s), 12 Warning(s).
+Target not created
+Load "C:\\Users\\HP\\Downloads\\CASE ABC\\CASE ABC final\\LCD.axf" 
+_____^
+*** error 56: cannot open file
+Error: Flash Download failed  -  Could not load file 'C:\Users\HP\Downloads\CASE ABC\CASE ABC final\LCD.axf'
+ds\CASE ABC\CASE ABC final\LCD.axf'. Debugger aborted !
+Error: Could not load file 'C:\Users\HP\Downloads\CASE ABC\CASE ABC final\LCD.axf'. Debugger aborted !

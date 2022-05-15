@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\LCD.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\LCD.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sat May 14 16:37:41 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sun May 15 17:03:20 2022
 <BR><P>
 <H3>Maximum Stack Usage =        136 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -880,16 +880,17 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[11]"></a>GPIOPortE_Handler</STRONG> (Thumb, 98 bytes, Stack size 8 bytes, switch3.o(i.GPIOPortE_Handler))
+<P><STRONG><a name="[11]"></a>GPIOPortE_Handler</STRONG> (Thumb, 150 bytes, Stack size 8 bytes, switch3.o(i.GPIOPortE_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = GPIOPortE_Handler &rArr; LCD_OutString &rArr; LCD_OutChar &rArr; SysTick_Wait1microsec &rArr; SysTick_Wait
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Wait10ms
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LEDS_OFF
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_OutString
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Clear
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
 </UL>
-<P><STRONG><a name="[2b]"></a>GPIOPortF_Handler</STRONG> (Thumb, 140 bytes, Stack size 8 bytes, interrupt.o(i.GPIOPortF_Handler))
+<P><STRONG><a name="[2b]"></a>GPIOPortF_Handler</STRONG> (Thumb, 156 bytes, Stack size 8 bytes, interrupt.o(i.GPIOPortF_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = GPIOPortF_Handler &rArr; LCD_OutString &rArr; LCD_OutChar &rArr; SysTick_Wait1microsec &rArr; SysTick_Wait
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Wait10ms
@@ -939,7 +940,7 @@ Global Symbols
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[b0]"></a>LEDS_BLINK_3times</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, leds.o(i.LEDS_BLINK_3times))
+<P><STRONG><a name="[b0]"></a>LEDS_BLINK_3times</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, leds.o(i.LEDS_BLINK_3times))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = LEDS_BLINK_3times &rArr; SysTick_Wait10ms &rArr; SysTick_Wait
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Wait10ms
@@ -950,7 +951,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[aa]"></a>LEDS_OFF</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, leds.o(i.LEDS_OFF))
-<BR><BR>[Called By]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOPortF_Handler
+<BR><BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOPortE_Handler
+<LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOPortF_Handler
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LEDS_BLINK_3times
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1029,7 +1031,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8e]"></a>main</STRONG> (Thumb, 1294 bytes, Stack size 0 bytes, lcdtestmain.o(i.main))
+<P><STRONG><a name="[8e]"></a>main</STRONG> (Thumb, 1350 bytes, Stack size 0 bytes, lcdtestmain.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136 + Unknown Stack Size
 <LI>Call Chain = main &rArr; __2snprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
