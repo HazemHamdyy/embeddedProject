@@ -11,3 +11,4 @@
 .\lcdtestmain.o: interrupt.h
 .\lcdtestmain.o: case B-C.h
 .\lcdtestmain.o: leds.h
+.\lcdtestmain.o: switch3.h

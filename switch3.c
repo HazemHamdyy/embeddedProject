@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include "tm4c123gh6pm.h"
 #include "LCD.h"
+#include "leds.h"
 #include "interrupt.h"
 #include "systick.h"
 
@@ -17,7 +18,7 @@ void switch3_buzzer_init(void){
 	GPIO_PORTE_DEN_R |= 0x30;
   GPIO_PORTE_PUR_R|=0X10; 
 	 GPIO_PORTE_AMSEL_R |= 0;       //     disable analog functionality on PF
-	
+	GPIO_PORTE_PDR_R|= 0x20;
 	GPIO_PORTE_IS_R &= ~0x10;     // (d) PF4 is edge-sensitive
   GPIO_PORTE_IBE_R &= ~0x10;    //     PF4 is not both edges
   GPIO_PORTE_IEV_R &= ~0x10;    //     PF4 falling edge event
@@ -31,7 +32,10 @@ void switch3_buzzer_init(void){
 
 void GPIOPortE_Handler(void)
 {
-	if(isPlay ){
+	GPIO_PORTE_ICR_R = 0x10;
+	if(isPlay){
+		isPlay=false;
+	isPaused=!isPaused;
 	
 		GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
 	LCD_Clear();
@@ -40,5 +44,10 @@ void GPIOPortE_Handler(void)
 		LCD_OutString(buffer); 
 	 SysTick_Wait10ms(20);
 		GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
-}
+	//GPIO_PORTF_DATA_R ^= 0x04; 
+  //LCD_OutUHex(GPIO_PORTF_DATA_R);
+	 //SysTick_Wait10ms(20);
+		while(!(GPIO_PORTE_DATA_R&0x10)){
+		}
+		}
 }

@@ -10,11 +10,14 @@
 #include "interrupt.h"
 #include "case B-C.h"
 #include "leds.h"
+#include "switch3.h"
+
 
 int y ;
  int time;
 char buffer2 [5];
 int main(void){
+	switch3_buzzer_init();
   unsigned char key ;
 	unsigned char weight='3';
 	
@@ -57,7 +60,8 @@ isPlay=true;
 				LCD_OutString("FOOD IS READY");
 				
 				LEDS_BLINK_3times ();
-				GPIO_PORTE_DATA_R|=0X20;
+				
+			GPIO_PORTE_DATA_R|=0X20;
 			/*LEDS_OFF ();
 		GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;*/
 				
@@ -83,7 +87,7 @@ if (weight!=0){
 
 	LCD_OutChar(weight);
 	SysTick_Wait10ms(10);
-	int we=weight-'0';
+	 int we=weight-'0';
 		 if((we>=1) && (we<=9)){
      time=CookingTime_case_B(we);
 			 x=time/60; //minutes
@@ -105,9 +109,11 @@ if (weight!=0){
 			 
 		 
 for(int i =0;i<=500;i++){
-  SysTick_Wait10ms(10);
-if(((GPIO_PORTF_DATA_R&01)==0)){
-    SysTick_Wait1s(2); 
+	
+	
+  SysTick_Wait10ms(1);
+if(((GPIO_PORTF_DATA_R&01)==0)&(GPIO_PORTE_DATA_R&0x10)){
+   // SysTick_Wait1s(2); 
 		isPlay=true;
 		while(strcmp (buffer,"00:00")&isPlay){
 						LCD_Clear(); 
@@ -116,7 +122,8 @@ if(((GPIO_PORTF_DATA_R&01)==0)){
 						for(int z=x;z>=0;z--)//i=x & j=y
 	              {for (int j=y;j>=0;j--)
 						       { 
-								snprintf(buffer,10,"%02d",x);  //to convert minutes and seconds into strings
+										 if(isPlay){
+											 	snprintf(buffer,10,"%02d",x);  //to convert minutes and seconds into strings
 								strcat(buffer, ":");			
 								snprintf(buffer2,10,"%02d",y);
 								strcat(buffer,buffer2);
@@ -125,17 +132,26 @@ if(((GPIO_PORTF_DATA_R&01)==0)){
 								 SysTick_Wait10ms(50); //display for 1 second 
 								LCD_Clear(); 
 									y--;
+										 
+										 }
+							
 									 }
 									 y=60;
 									 x--;
 								 }
 							LCD_Clear();	
 				}
-					break;}}   
-     LCD_OutString("FOOD IS READY");
-			GPIO_PORTE_DATA_R|=0X20;		
+		break;
+					}
+
+}   
+if((x==0)&(y==0)){
+LCD_OutString("FOOD IS READY");
+						//GPIO_PORTE_DATA_R|=0X20;
 			LEDS_BLINK_3times ();
 			LEDS_OFF ();
+}
+     
 				
 					break;
 		 
@@ -143,7 +159,7 @@ if(((GPIO_PORTF_DATA_R&01)==0)){
 else
 {
 	
-	SysTick_Wait10ms(10);
+	SysTick_Wait10ms(1);
 	
 	goto dee;
 	break;
@@ -162,8 +178,8 @@ case 'C':
 deh:
  weight=keypad_getkey();
 if (weight!=0){
-LCD_OutChar(weight);
-	
+
+	LCD_OutChar(weight);
 	SysTick_Wait10ms(10);
 	 int we=weight-'0';
 		 if((we>=1) && (we<=9)){
@@ -190,7 +206,7 @@ for(int i =0;i<=500;i++){
 	
 	
   SysTick_Wait10ms(10);
- 	if(((GPIO_PORTF_DATA_R&01)==0)){
+ 	if(((GPIO_PORTF_DATA_R&01)==0)&(GPIO_PORTE_DATA_R&0x10)){
     SysTick_Wait1s(2); 
 		isPlay=true;
 		while(strcmp (buffer,"00:00")&isPlay){
@@ -200,7 +216,8 @@ for(int i =0;i<=500;i++){
 						for(int z=x;z>=0;z--)//i=x & j=y
 	              {for (int j=y;j>=0;j--)
 						       { 
-								snprintf(buffer,10,"%02d",x);  //to convert minutes and seconds into strings
+										 if(isPlay){
+											 	snprintf(buffer,10,"%02d",x);  //to convert minutes and seconds into strings
 								strcat(buffer, ":");			
 								snprintf(buffer2,10,"%02d",y);
 								strcat(buffer,buffer2);
@@ -209,18 +226,32 @@ for(int i =0;i<=500;i++){
 								 SysTick_Wait10ms(50); //display for 1 second 
 								LCD_Clear(); 
 									y--;
+										 
+										 }
+							
 									 }
 									 y=60;
 									 x--;
 								 }
 							LCD_Clear();	
+								 break;
 				}
 					break;}}    
+if((x==0)&(y==0)){
 LCD_OutString("FOOD IS READY");
-			GPIO_PORTE_DATA_R|=0X20;			
+						//GPIO_PORTE_DATA_R|=0X20;
 			LEDS_BLINK_3times ();
 			LEDS_OFF ();
-					break;	 
+}
+					break;
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
 }
 else
 {
