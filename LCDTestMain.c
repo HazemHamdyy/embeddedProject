@@ -81,9 +81,9 @@ dee:
  weight=keypad_getkey();
 if (weight!=0){
 
-	LCD_OutUDec(weight);
+	LCD_OutChar(weight);
 	SysTick_Wait10ms(10);
-	 int we=weight;
+	int we=weight-'0';
 		 if((we>=1) && (we<=9)){
      time=CookingTime_case_B(we);
 			 x=time/60; //minutes
@@ -162,10 +162,10 @@ case 'C':
 deh:
  weight=keypad_getkey();
 if (weight!=0){
-LCD_OutUDec(weight);
+LCD_OutChar(weight);
 	
 	SysTick_Wait10ms(10);
-	 int we=weight;
+	 int we=weight-'0';
 		 if((we>=1) && (we<=9)){
      time=CookingTime_case_C(we);
 			 x=time/60; //minutes
