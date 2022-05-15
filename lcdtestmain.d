@@ -8,3 +8,4 @@
 .\lcdtestmain.o: tm4c123gh6pm.h
 .\lcdtestmain.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
 .\lcdtestmain.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\lcdtestmain.o: lcdCommand.h

@@ -7,6 +7,7 @@
 #include "tm4c123gh6pm.h"
 #include "string.h"
 #include "stdio.h"
+#include "lcdCommand.h"
 
 int main(void){
   unsigned char key;
@@ -17,6 +18,7 @@ int main(void){
   LCD_OutString("Test LCD");
   SysTick_Wait10ms(10);
 	//LEDS_ON();
+	char buffer[5];
 
 while(1){
     LCD_Clear();
@@ -38,7 +40,16 @@ case 'C':
 case 'D':
 					LCD_OutString("Cooking time?");
 					SysTick_Wait10ms(50);
-					for (int i = 0; i<50 ; i++){
+					read_write();
+					LCD_command(0x02);
+						int m = duration();
+						snprintf (buffer, 10, "%d", m);
+						LCD_Clear();
+						SysTick_Wait10ms(50);
+						LCD_OutString(buffer);
+					
+SysTick_Wait10ms(50);
+					/*for (int i = 0; i<500 ; i++){
 						SysTick_Wait10ms(1);
 						 if((GPIO_PORTF_DATA_R&01) == 0) {
 						char buffer[5];
@@ -48,9 +59,10 @@ case 'D':
 					}
 					else {
 					read_write();
-						
+					LCD_OutString("press Sw2");
+
 					}
-					}
+					}*/
          
 					break;
 default:

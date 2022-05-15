@@ -188,7 +188,7 @@ void show_user_value(uint32_t n){
 			temp[1] = arr[1];
 			LCD_command(0x02);
 			LCD_OutChar((int)arr[0]);
-			temp[0] = '0';
+			temp[0] = arr[0];
 			//print(arr);
 			/*for(int i = 3; i>=0; i--){
 				reset();
@@ -210,16 +210,19 @@ void read_write(){
 	char buffer [5];
 	int m;
 	reset();
-	while(n < 4){
+	while(n < 3){
 		dee:
+		if((GPIO_PORTF_DATA_R&01) == 0){
+			break;
+		}
 	key=keypad_getkey();
 			if (key !=0){
-				button = sw_input();
-				if ( (GPIO_PORTF_DATA_R&01) == 0) {
+				//button = sw_input();
+				/*if ( (GPIO_PORTF_DATA_R&01) == 0) {
 					  m = duration();
 						snprintf (buffer, 10, "%d", m);
 						LCD_OutString(buffer);
-					/*if (((int)temp[0]) > 3 || ((int)temp[3]) > 5){
+					//if (((int)temp[0]) > 3 || ((int)temp[3]) > 5){
 						LCD_OutString("Invalid Num");
 						read_write();
 					}*/
@@ -228,19 +231,21 @@ void read_write(){
 						snprintf (buffer, 10, "%d", m);
 						LCD_OutString(buffer);
 					}*/
-				}
-				else /*(button != sw2_pressed)*/{
+				//*/
+				//else /*(button != sw2_pressed)*/
+				
 					n = get_input();
 					//shift(arr, n);
 					//print(temp);
 					show_user_value(n);
 					//SysTick_Wait10ms(100);
-					goto dee;
-				}
+					//goto dee;
+				
 			}
 			else
 			{
 				goto dee;
 			}
+			
 }
 	}
