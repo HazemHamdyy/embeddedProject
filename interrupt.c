@@ -56,11 +56,11 @@ void GPIOPortF_Handler(void){
   //LCD_OutUHex(GPIO_PORTF_DATA_R);
 	 //SysTick_Wait10ms(20);
 		while(1){
-		if(!(GPIO_PORTF_DATA_R&0x10)){
+		if((GPIO_PORTF_DATA_R&0x10)==0){
 		isPlay=false;
 			LEDS_OFF ();
 		break;}
-		if((!(GPIO_PORTF_DATA_R&1))&&(GPIO_PORTE_DATA_R&0x10)){
+		if((GPIO_PORTF_DATA_R&1)==0){
 		isPaused=false;
 			isPlay=true;
 			break;

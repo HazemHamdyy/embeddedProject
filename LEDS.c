@@ -28,17 +28,11 @@ void LEDS_BLINK_3times (void)
 	GPIO_PORTF_DATA_R|=0x0E;*/
 for (int i=0 ; i<3 ; i++)
 	{
-		LEDS_OFF();
-			GPIO_PORTE_DATA_R|=0x00;
-		
-				 SysTick_Wait10ms(10);
-		GPIO_PORTE_DATA_R|=0x20;
 	LEDS_ON();
 SysTick_Wait10ms(30);
 		
 		LEDS_OFF();
-			GPIO_PORTE_DATA_R|=0x00;
-
+		 SysTick_Wait10ms(10);
 		//GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
 	}
 }

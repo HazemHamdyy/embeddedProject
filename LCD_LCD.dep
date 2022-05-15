@@ -1,73 +1,77 @@
 Dependencies for Project 'LCD', Target 'LCD': (DO NOT MODIFY !)
-F (.\startup.s)(0x5199176C)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
-F (.\LCDTestMain.c)(0x628189D9)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\lcdtestmain.o --omf_browse .\lcdtestmain.crf --depend .\lcdtestmain.d)
+F (.\startup.s)(0x6280F4DC)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\LCDTestMain.c)(0x6281326F)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\lcdtestmain.o --omf_browse .\lcdtestmain.crf --depend .\lcdtestmain.d)
+I (caseD.h)(0x628111C4)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\stdlib.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
-I (LCD.h)(0x627EAC21)
-I (systick.h)(0x627EB53F)
+I (LCD.h)(0x53E888EA)
+I (systick.h)(0x6279863E)
 I (Keypad.h)(0x62787825)
+I (case A.h)(0x627E3EBB)
 I (tm4c123gh6pm.h)(0x5388525A)
-I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C819B4)
-I (interrupt.h)(0x62818085)
-I (case B-C.h)(0x62817966)
-I (leds.h)(0x627E9846)
-I (switch3.h)(0x62810044)
-F (.\SysTick.c)(0x628019A9)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\systick.o --omf_browse .\systick.crf --depend .\systick.d)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+I (lcdCommand.h)(0x627FC870)
+F (.\SysTick.c)(0x627986DF)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\systick.o --omf_browse .\systick.crf --depend .\systick.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
-F (.\lcd.c)(0x627D3191)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\lcd.o --omf_browse .\lcd.crf --depend .\lcd.d)
+F (.\lcd.c)(0x627E400E)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\lcd.o --omf_browse .\lcd.crf --depend .\lcd.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
-I (LCD.h)(0x627EAC21)
+I (LCD.h)(0x53E888EA)
 I (tm4c123gh6pm.h)(0x5388525A)
-I (systick.h)(0x627EB53F)
-F (.\keypad.c)(0x627D3191)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\keypad.o --omf_browse .\keypad.crf --depend .\keypad.d)
+I (systick.h)(0x6279863E)
+F (.\keypad.c)(0x627E3570)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\keypad.o --omf_browse .\keypad.crf --depend .\keypad.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
 I (tm4c123gh6pm.h)(0x5388525A)
-I (systick.h)(0x627EB53F)
-F (.\interrupt.c)(0x62817630)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\interrupt.o --omf_browse .\interrupt.crf --depend .\interrupt.d)
+I (systick.h)(0x6279863E)
+F (.\casa A.c)(0x6280F1D0)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o ".\casa a.o" --omf_browse ".\casa a.crf" --depend ".\casa a.d")
+I (tm4c123gh6pm.h)(0x5388525A)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
 I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
 I (C:\Keil\ARM\ARMCC\include\stdlib.h)(0x51C819B4)
 I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
-I (LCD.h)(0x627EAC21)
-I (systick.h)(0x627EB53F)
-I (tm4c123gh6pm.h)(0x5388525A)
-I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C819B4)
-I (leds.h)(0x627E9846)
-F (.\leds.c)(0x62810045)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\leds.o --omf_browse .\leds.crf --depend .\leds.d)
-I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\stdlib.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
-I (LCD.h)(0x627EAC21)
-I (systick.h)(0x627EB53F)
-I (interrupt.h)(0x62818085)
-I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C819B4)
-I (tm4c123gh6pm.h)(0x5388525A)
-F (.\case B-C.c)(0x6281818D)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o ".\case b-c.o" --omf_browse ".\case b-c.crf" --depend ".\case b-c.d")
-I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
-F (.\switch3.c)(0x628102B7)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\switch3.o --omf_browse .\switch3.crf --depend .\switch3.d)
+I (LCD.h)(0x53E888EA)
+I (systick.h)(0x6279863E)
+F (.\caseD2.c)(0x6281326F)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\cased2.o --omf_browse .\cased2.crf --depend .\cased2.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
 I (tm4c123gh6pm.h)(0x5388525A)
-I (LCD.h)(0x627EAC21)
-I (leds.h)(0x627E9846)
-I (interrupt.h)(0x62818085)
-I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C819B4)
-I (systick.h)(0x627EB53F)
-F (.\counting.c)(0x62818924)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\counting.o --omf_browse .\counting.crf --depend .\counting.d)
-I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\stdlib.h)(0x51C819B4)
-I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
-I (LCD.h)(0x627EAC21)
-I (systick.h)(0x627EB53F)
 I (Keypad.h)(0x62787825)
+I (LcdCommand.h)(0x627FC870)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+I (LCD.h)(0x53E888EA)
+I (systick.h)(0x6279863E)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
+I (counting.h)(0x62812B72)
+F (.\lcdCommand.c)(0x627FBF92)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\lcdcommand.o --omf_browse .\lcdcommand.crf --depend .\lcdcommand.d)
+I (tm4c123gh6pm.h)(0x5388525A)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
+I (systick.h)(0x6279863E)
+F (.\counting.c)(0x6280F14A)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\counting.o --omf_browse .\counting.crf --depend .\counting.d)
+I (tm4c123gh6pm.h)(0x5388525A)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
+I (systick.h)(0x6279863E)
+I (leds.h)(0x6280EC5D)
+I (LCD.h)(0x53E888EA)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\stdlib.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
+I (interrupt.h)(0x6280ED63)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C819B4)
+F (.\leds.c)(0x6280ED63)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\leds.o --omf_browse .\leds.crf --depend .\leds.d)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\stdlib.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
+I (LCD.h)(0x53E888EA)
+I (systick.h)(0x6279863E)
+I (interrupt.h)(0x6280ED63)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C819B4)
+I (tm4c123gh6pm.h)(0x5388525A)
+F (.\interrupt.c)(0x6280ED63)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\interrupt.o --omf_browse .\interrupt.crf --depend .\interrupt.d)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\stdlib.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
+I (LCD.h)(0x53E888EA)
+I (systick.h)(0x6279863E)
 I (tm4c123gh6pm.h)(0x5388525A)
 I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C819B4)
-I (interrupt.h)(0x62818085)
-I (case B-C.h)(0x62817966)
-I (leds.h)(0x627E9846)
-I (switch3.h)(0x62810044)
+I (leds.h)(0x6280EC5D)

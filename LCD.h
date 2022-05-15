@@ -1,4 +1,25 @@
+// LCD.h
+// Runs on LM4F120/TM4C123
+// header file for the LCD
+// Valvano
+// September 11, 2013
 
+/* This example accompanies the book
+   "Embedded Systems: Real Time Interfacing to ARM Cortex M Microcontrollers",
+   ISBN: 978-1463590154, Jonathan Valvano, copyright (c) 2014
+   Section 4.7.1, Program 4.2 and Program 4.3
+
+ Copyright 2014 by Jonathan W. Valvano, valvano@mail.utexas.edu
+    You may use, edit, run or distribute this file
+    as long as the above copyright notice remains
+ THIS SOFTWARE IS PROVIDED "AS IS".  NO WARRANTIES, WHETHER EXPRESS, IMPLIED
+ OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE.
+ VALVANO SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL,
+ OR CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
+ For more information about my classes, my research, and my books, see
+ http://users.ece.utexas.edu/~valvano/
+ */
 
 /*
   size is 1*16
@@ -24,7 +45,6 @@ addr  00 01 02 03 04 05 ... 0F
 // Initialize LCD
 // Inputs: none
 // Outputs: none
-void OutCmd(unsigned char command);
 void LCD_Init(void);
 
 // Output a character to the LCD
