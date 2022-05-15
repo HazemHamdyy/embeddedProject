@@ -57,7 +57,7 @@ isPlay=true;
 				LCD_OutString("FOOD IS READY");
 				
 				LEDS_BLINK_3times ();
-				
+				GPIO_PORTE_DATA_R|=0X20;
 			/*LEDS_OFF ();
 		GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;*/
 				
@@ -109,7 +109,7 @@ for(int i =0;i<=500;i++){
 if(((GPIO_PORTF_DATA_R&01)==0)){
     SysTick_Wait1s(2); 
 		isPlay=true;
-		while(isPlay){
+		while(strcmp (buffer,"00:00")&isPlay){
 						LCD_Clear(); 
 						 LEDS_ON();
 						
@@ -133,7 +133,7 @@ if(((GPIO_PORTF_DATA_R&01)==0)){
 				}
 					break;}}   
      LCD_OutString("FOOD IS READY");
-						
+			GPIO_PORTE_DATA_R|=0X20;		
 			LEDS_BLINK_3times ();
 			LEDS_OFF ();
 				
@@ -193,7 +193,7 @@ for(int i =0;i<=500;i++){
  	if(((GPIO_PORTF_DATA_R&01)==0)){
     SysTick_Wait1s(2); 
 		isPlay=true;
-		while(isPlay){
+		while(strcmp (buffer,"00:00")&isPlay){
 						LCD_Clear(); 
 						 LEDS_ON();
 						
@@ -217,7 +217,7 @@ for(int i =0;i<=500;i++){
 				}
 					break;}}    
 LCD_OutString("FOOD IS READY");
-						
+			GPIO_PORTE_DATA_R|=0X20;			
 			LEDS_BLINK_3times ();
 			LEDS_OFF ();
 					break;	 
