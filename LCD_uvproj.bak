@@ -445,6 +445,11 @@
               <FileType>1</FileType>
               <FilePath>.\case B-C.c</FilePath>
             </File>
+            <File>
+              <FileName>switch3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\switch3.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

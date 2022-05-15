@@ -88,9 +88,9 @@ if (weight!=0){
      time=CookingTime_case_B(we);
 			 x=time/60; //minutes
 			 y=time -(x*60); //seconds
-			 snprintf(buffer,10,"%d",x);
+			 snprintf(buffer,10,"%02d",x);
 			 strcat(buffer, ":");	
-			 snprintf(buffer2,10,"%d",y);
+			 snprintf(buffer2,10,"%02d",y);
 			 strcat(buffer,buffer2);
 			 LCD_Clear();
 	    LCD_OutString(buffer);
@@ -116,9 +116,9 @@ if(((GPIO_PORTF_DATA_R&01)==0)){
 						for(int z=x;z>=0;z--)//i=x & j=y
 	              {for (int j=y;j>=0;j--)
 						       { 
-								snprintf(buffer,10,"%d",x);  //to convert minutes and seconds into strings
+								snprintf(buffer,10,"%02d",x);  //to convert minutes and seconds into strings
 								strcat(buffer, ":");			
-								snprintf(buffer2,10,"%d",y);
+								snprintf(buffer2,10,"%02d",y);
 								strcat(buffer,buffer2);
 		
 								LCD_OutString(buffer);
@@ -170,9 +170,9 @@ LCD_OutUDec(weight);
      time=CookingTime_case_C(we);
 			 x=time/60; //minutes
 			 y=time -(x*60); //seconds
-			 snprintf(buffer,10,"%d",x);
+			 snprintf(buffer,10,"%02d",x);
 			 strcat(buffer, ":");	
-			 snprintf(buffer2,10,"%d",y);
+			 snprintf(buffer2,10,"%02d",y);
 			 strcat(buffer,buffer2);
 			 LCD_Clear();
 	    LCD_OutString(buffer);
@@ -200,9 +200,9 @@ for(int i =0;i<=500;i++){
 						for(int z=x;z>=0;z--)//i=x & j=y
 	              {for (int j=y;j>=0;j--)
 						       { 
-								snprintf(buffer,10,"%d",x);  //to convert minutes and seconds into strings
+								snprintf(buffer,10,"%02d",x);  //to convert minutes and seconds into strings
 								strcat(buffer, ":");			
-								snprintf(buffer2,10,"%d",y);
+								snprintf(buffer2,10,"%02d",y);
 								strcat(buffer,buffer2);
 		
 								LCD_OutString(buffer);
