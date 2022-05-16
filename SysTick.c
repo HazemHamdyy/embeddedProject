@@ -58,3 +58,10 @@ void SysTick_Wait1microsec(uint32_t delay){
     SysTick_Wait(80);  // wait 10us (assumes 80 MHz clock)
   }
 }
+void SysTick_Wait1s(uint32_t delay)
+{
+  uint32_t i;
+  for(i=0; i<delay; i++){
+    SysTick_Wait(800000);  // wait 1ms (assumes 80 MHz clock)
+  }
+}

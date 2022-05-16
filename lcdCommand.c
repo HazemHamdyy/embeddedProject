@@ -1,6 +1,7 @@
 #include "tm4c123gh6pm.h"
 #include <stdint.h>
 #include "systick.h"
+
 //	0x01    *  Clear display screen
 //  0x02    *  Return to home position
 //  0x04    *  Shift cursor to left
@@ -25,7 +26,7 @@
 //  0x90    *  Force cursor to start from 3rd line
 //  0xD0    *  Force cursor to start from 4th line
 
-void LCD_command(unsigned int command) {
+void LCD_command(unsigned int command) { 
 	
 	/*****************************************************************************
 	*
@@ -53,7 +54,8 @@ void LCD_setRowCol(unsigned int row, unsigned int col) {
 	if(row == 0) {
 		command = 0x80;
 		while(col <= 0x0F && col) {
-		  LCD_command(command + col);
+			
+		 LCD_command(command + col);
 		  break;
 		}
 	}
@@ -61,6 +63,7 @@ void LCD_setRowCol(unsigned int row, unsigned int col) {
 	if(row == 1) {
 		command = 0xC0;
 		while(col <= 0x0F && col) {
+			
 		  LCD_command(command + col);
 		  break;
 		}

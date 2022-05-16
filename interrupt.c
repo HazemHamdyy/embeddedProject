@@ -7,6 +7,7 @@
 #include "tm4c123gh6pm.h"
 #include "stdbool.h"
 #include "leds.h"
+#include "caseD.h"
 
 int x=0 ;
 bool isPlay=false ;
@@ -40,7 +41,10 @@ void EdgeCounter_Init(void){
 }
 
 void GPIOPortF_Handler(void){
-	GPIO_PORTF_ICR_R = 0x10; 	// acknowledge flag4
+	GPIO_PORTF_ICR_R = 0x10;
+if((caseD)&&(!isPlay)){
+reset();
+} 	// acknowledge flag4
 	if(isPlay){
 	isPlay=false;
 	isPaused=!isPaused;
@@ -56,11 +60,15 @@ void GPIOPortF_Handler(void){
   //LCD_OutUHex(GPIO_PORTF_DATA_R);
 	 //SysTick_Wait10ms(20);
 		while(1){
-		if((GPIO_PORTF_DATA_R&0x10)==0){
+				GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
+			 SysTick_Wait10ms(2);
+			
+		if(!(GPIO_PORTF_DATA_R&0x10)){
+			
 		isPlay=false;
 			LEDS_OFF ();
 		break;}
-		if((GPIO_PORTF_DATA_R&1)==0){
+		if((!(GPIO_PORTF_DATA_R&1))&&(GPIO_PORTE_DATA_R&0x10)){
 		isPaused=false;
 			isPlay=true;
 			break;

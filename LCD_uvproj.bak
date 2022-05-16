@@ -431,19 +431,29 @@
               <FilePath>.\keypad.c</FilePath>
             </File>
             <File>
-              <FileName>casa A.c</FileName>
+              <FileName>interrupt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\casa A.c</FilePath>
+              <FilePath>.\interrupt.c</FilePath>
             </File>
             <File>
-              <FileName>caseD2.c</FileName>
+              <FileName>leds.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\caseD2.c</FilePath>
+              <FilePath>.\leds.c</FilePath>
             </File>
             <File>
-              <FileName>lcdCommand.c</FileName>
+              <FileName>case B-C.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\lcdCommand.c</FilePath>
+              <FilePath>.\case B-C.c</FilePath>
+            </File>
+            <File>
+              <FileName>switch3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\switch3.c</FilePath>
+            </File>
+            <File>
+              <FileName>counting.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\counting.c</FilePath>
             </File>
           </Files>
         </Group>

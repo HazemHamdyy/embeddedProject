@@ -48,7 +48,7 @@ void OutCmd(unsigned char command){
 // Inputs: none
 // Outputs: none
 void LCD_Init(void){ volatile long delay;
-  SYSCTL_RCGC2_R |= 0x00000003;  // 1) activate clock for Ports A and B
+  SYSCTL_RCGC2_R |= 0x0000003F;  // 1) activate clock for Ports A and B
   delay = SYSCTL_RCGC2_R;        // 2) no need to unlock
   GPIO_PORTB_AMSEL_R &= ~0xFF;   // 3) disable analog function on PB7-0
   GPIO_PORTA_AMSEL_R &= ~0xC0;   //    disable analog function on PA7-6              

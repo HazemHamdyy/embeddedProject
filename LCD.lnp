@@ -4,12 +4,13 @@
 ".\systick.o"
 ".\lcd.o"
 ".\keypad.o"
-".\casa a.o"
-".\cased2.o"
-".\lcdcommand.o"
-".\counting.o"
-".\leds.o"
 ".\interrupt.o"
+".\leds.o"
+".\case b-c.o"
+".\switch3.o"
+".\counting.o"
+".\cased.o"
+".\lcdcommand.o"
 --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\LCD.map" -o .\LCD.axf

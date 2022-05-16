@@ -1,2 +1,2 @@
-#include "stdint.h"
-void counting(int delay);
+int* calcTime(int duration);
+void counting(int min, int sec);
