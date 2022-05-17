@@ -37,7 +37,7 @@ void count_1Min(uint32_t delay)
 		 LCD_Clear();
   }
 }
-/*void LEDS_ON (void)
+void LEDS_ON (void)
 {
 GPIO_PORTF_DATA_R &= ~(0X0E);
 GPIO_PORTF_DATA_R |=0X0E;
@@ -58,4 +58,4 @@ for (int i=0 ; i<3 ; i++)
 	
 	}
 	
-}*/
+}
