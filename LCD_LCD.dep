@@ -2,7 +2,7 @@ Dependencies for Project 'LCD', Target 'LCD': (DO NOT MODIFY !)
 F (.\startup.s)(0x6283E7F7)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
 F (.\LCDTestMain.c)(0x6283E7F7)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\lcdtestmain.o --omf_browse .\lcdtestmain.crf --depend .\lcdtestmain.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
-I (LCD.h)(0x6283E7F7)
+I (LCD.h)(0x62841735)
 I (systick.h)(0x6283E7F7)
 I (Keypad.h)(0x6283E7F7)
 I (case A.h)(0x6283E7F7)
@@ -10,7 +10,7 @@ F (.\SysTick.c)(0x6283E7F7)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 -
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
 F (.\lcd.c)(0x6283E7F7)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\lcd.o --omf_browse .\lcd.crf --depend .\lcd.d)
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
-I (LCD.h)(0x6283E7F7)
+I (LCD.h)(0x62841735)
 I (tm4c123gh6pm.h)(0x6283E7F7)
 I (systick.h)(0x6283E7F7)
 F (.\keypad.c)(0x6283E7F7)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\keypad.o --omf_browse .\keypad.crf --depend .\keypad.d)
@@ -23,21 +23,34 @@ I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
 I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
 I (C:\Keil\ARM\ARMCC\include\stdlib.h)(0x51C819B4)
 I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
-I (LCD.h)(0x6283E7F7)
+I (LCD.h)(0x62841735)
 I (systick.h)(0x6283E7F7)
-F (.\case C.c)(0x6283EC59)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o ".\case c.o" --omf_browse ".\case c.crf" --depend ".\case c.d")
+F (.\case C.c)(0x62841A66)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o ".\case c.o" --omf_browse ".\case c.crf" --depend ".\case c.d")
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
 I (tm4c123gh6pm.h)(0x6283E7F7)
-I (lcd.h)(0x6283E7F7)
+I (lcd.h)(0x62841735)
 I (Keypad.h)(0x6283E7F7)
 I (systick.h)(0x6283E7F7)
 I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
 I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
-F (.\Case B.c)(0x6283ECB3)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o ".\case b.o" --omf_browse ".\case b.crf" --depend ".\case b.d")
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\ctype.h)(0x51C819B4)
+I (Caseb&c.h)(0x628417BE)
+F (.\Case B.c)(0x62841A69)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o ".\case b.o" --omf_browse ".\case b.crf" --depend ".\case b.d")
 I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
 I (tm4c123gh6pm.h)(0x6283E7F7)
-I (lcd.h)(0x6283E7F7)
+I (lcd.h)(0x62841735)
 I (Keypad.h)(0x6283E7F7)
 I (systick.h)(0x6283E7F7)
 I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
 I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\ctype.h)(0x51C819B4)
+I (Caseb&c.h)(0x628417BE)
+F (.\CaseCandB.h)(0x00000000)()
+F (.\CaseB&C.c)(0x62841796)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.. -I..\..\.. --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR-o .\caseb&c.o --omf_browse .\caseb&c.crf --depend .\caseb&c.d)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x51C819B4)
+I (C:\Keil\ARM\ARMCC\include\ctype.h)(0x51C819B4)

@@ -6,3 +6,6 @@
 .\case b.o: systick.h
 .\case b.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 .\case b.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\case b.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\case b.o: C:\Keil\ARM\ARMCC\bin\..\include\ctype.h
+.\case b.o: Caseb&c.h
