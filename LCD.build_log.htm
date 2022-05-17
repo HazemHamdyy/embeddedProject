@@ -1,0 +1,76 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\Project Empedded\embeddedProject\LCD.uvproj
+Project File Date:  05/17/2022
+
+<h2>Output:</h2>
+Build target 'LCD'
+compiling case C.c...
+Caseb&c.h(12): warning:  #1-D: last line of file ends without a newline
+        
+case C.c(20): warning:  #223-D: function "OutCmd" declared implicitly
+            OutCmd(0xC0); ////Set LCD Cursor to second line
+case C.c(60): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
+                  snprintf(buffer1, 10, "%02d", i); // to convert minutes and seconds into strings
+case C.c(61): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
+                  strcat(buffer1, ":");
+case C.c(62): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
+                  snprintf(buffer2, 10, "%02d", j);
+case C.c(63): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
+                  strcat(buffer1, buffer2);
+case C.c(63): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *restrict"
+                  strcat(buffer1, buffer2);
+case C.c(22): warning:  #177-D: variable "k" was declared but never referenced
+  int k =0;
+case C.c(23): warning:  #177-D: variable "time" was declared but never referenced
+                int time;
+case C.c(16): warning:  #177-D: variable "i" was declared but never referenced
+  { int weight,i,j;
+case C.c(16): warning:  #177-D: variable "j" was declared but never referenced
+  { int weight,i,j;
+case C.c(17): warning:  #177-D: variable "key" was declared but never referenced
+        char key; 
+case C.c(83): warning:  #1-D: last line of file ends without a newline
+        
+case C.c: 13 warnings, 0 errors
+compiling Case B.c...
+Caseb&c.h(12): warning:  #1-D: last line of file ends without a newline
+        
+Case B.c(19): warning:  #223-D: function "OutCmd" declared implicitly
+            OutCmd(0xC0); ////Set LCD Cursor to second line
+Case B.c(59): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
+                  snprintf(buffer1, 10, "%02d", i); // to convert minutes and seconds into strings
+Case B.c(60): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
+                  strcat(buffer1, ":");
+Case B.c(61): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
+                  snprintf(buffer2, 10, "%02d", j);
+Case B.c(62): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *restrict"
+                  strcat(buffer1, buffer2);
+Case B.c(62): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *restrict"
+                  strcat(buffer1, buffer2);
+Case B.c(21): warning:  #177-D: variable "k" was declared but never referenced
+  int k =0;
+Case B.c(22): warning:  #177-D: variable "time" was declared but never referenced
+                int time;
+Case B.c(15): warning:  #177-D: variable "i" was declared but never referenced
+  { int weight,i,j;
+Case B.c(15): warning:  #177-D: variable "j" was declared but never referenced
+  { int weight,i,j;
+Case B.c(16): warning:  #177-D: variable "key" was declared but never referenced
+        char key; 
+Case B.c(82): warning:  #1-D: last line of file ends without a newline
+        
+Case B.c: 13 warnings, 0 errors
+linking...
+Program Size: Code=3188 RO-data=32 RW-data=0 ZI-data=1024  
+".\LCD.axf" - 0 Error(s), 26 Warning(s).
+mage map.
+Finished: 2 information, 0 warning and 2 error messages.
+".\LCD.axf" - 2 Error(s), 24 Warning(s).
+Target not created
+ning and 3 error messages.
+".\LCD.axf" - 3 Error(s), 24 Warning(s).
+Target not created

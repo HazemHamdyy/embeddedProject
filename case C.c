@@ -33,7 +33,7 @@ if (weight!=0){
 		
     while (invalid) // invalid true
     {
-        printf("ERR \n");
+        LCD_OutString("ERR ");
 				 SysTick_Wait10ms(50);
        /* while (getchar() != '\n')
         {
@@ -61,12 +61,12 @@ if (weight!=0){
                 strcat(buffer1, ":");
                 snprintf(buffer2, 10, "%02d", j);
                 strcat(buffer1, buffer2);
-                printf("%s", buffer1);
-                // LCD_Clear();
-                // CD_OutString(buffer1);
-                // SysTick_Wait10ms(100); //display for 1 second
-                // LCD_Clear();
-                printf("\n");
+               
+                 LCD_Clear();
+                 LCD_OutString(buffer1);
+                 SysTick_Wait10ms(100); //display for 1 second
+                 LCD_Clear();
+               
             }
 
             seconds = 59;
