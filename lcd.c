@@ -24,24 +24,15 @@
 #define RS 0x40 // on PA6
 #define LCDDATA (*((volatile uint32_t *)0x400053FC))   // PORTB
 #define LCDCMD (*((volatile uint32_t *)0x40004300))    // PA7-PA6
-//#define Freq 80            // assuming a 80 MHz bus clock
-//#define T6us 6*Freq        // 6us
-//#define T40us 40*Freq      // 40us
-//#define T160us 160*Freq    // 160us
-//#define T1600us 1600*Freq  // 1.60ms
-//#define T5ms 5000*Freq     // 5ms
-//#define T15ms 15000*Freq   // 15ms
+
 void OutCmd(unsigned char command){
   LCDDATA = command;
   LCDCMD = 0;           // E=0, R/W=0, RS=0
 	SysTick_Wait1microsec(6);
-  //SysTick_Wait(T6us);   // wait 6us
   LCDCMD = E;           // E=1, R/W=0, RS=0
 	SysTick_Wait1microsec(6);
-  //SysTick_Wait(T6us);   // wait 6us
   LCDCMD = 0;           // E=0, R/W=0, RS=0
 	SysTick_Wait1microsec(40);
-  //SysTick_Wait(T40us);  // wait 40us
 }
 
 // Initialize LCD

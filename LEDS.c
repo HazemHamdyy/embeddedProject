@@ -13,19 +13,14 @@
 
 void LEDS_ON (void)
 {
-//GPIO_PORTF_DATA_R &= ~(0X0E);
 GPIO_PORTF_DATA_R |=0X0E;
 }
 void LEDS_OFF (void)
 {
  GPIO_PORTF_DATA_R &= 0x11;
-//GPIO_PORTF_DATA_R &=~0X0E;
-
 }
 void LEDS_BLINK_3times (void)
 {
-	/*GPIO_PORTF_DATA_R &= ~(0X0E);
-	GPIO_PORTF_DATA_R|=0x0E;*/
 for (int i=0 ; i<3 ; i++)
 	{
 		LEDS_OFF();
@@ -39,6 +34,5 @@ SysTick_Wait10ms(30);
 		LEDS_OFF();
 			GPIO_PORTE_DATA_R|=0x00;
 
-		//GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
 	}
 }

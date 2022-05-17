@@ -17,7 +17,7 @@
 
 int y ;
  int time;
-//char buffer2 [5];
+
 int main(void){
 	switch3_buzzer_init();
   unsigned char key ;
@@ -69,12 +69,6 @@ if (weight!=0){
      time=CookingTime_case_B(we);
 			  x=  calcTime(time)[0];
 			 y= calcTime(time)[1];
-			 //x=time/60; //minutes
-			 //y=time -(x*60); //seconds
-			/* snprintf(buffer,10,"%02d",x);
-			 strcat(buffer, ":");	
-			 snprintf(buffer2,10,"%02d",y);
-			 strcat(buffer,buffer2);*/
 			 LCD_Clear();
 	    LCD_OutString(buffer);
 			 
@@ -113,8 +107,7 @@ case 'C':
            SysTick_Wait10ms(10);
   
 
-	//char buffer2[5];
-	 //weight=keypad_getkey();
+
 int k =0;
 deh:
 
@@ -178,7 +171,6 @@ case 'D':
 					SysTick_Wait10ms(50);
 					read_write();
 					int m = duration();
-          //calcTime(m);
 					counting(calcTime(m)[0],calcTime(m)[1]);
 					break;
 default:
@@ -187,7 +179,6 @@ default:
      break;
 }
 SysTick_Wait10ms(20);
-  //SysTick_Wait10ms(20);
 	 
 	 } 
 

@@ -6,19 +6,6 @@
 #include "systick.h"
 
 void EnableInterrupts(void);
-//switch3(microwavedoor)--->pE4
-/*void switch3_buzzer_init(void){
-	
- SYSCTL_RCGCGPIO_R |=0x3F;
-	while((SYSCTL_PRGPIO_R & 0x3F)==0);
-	GPIO_PORTE_LOCK_R =0X4C4F434B;
-	GPIO_PORTE_CR_R |=0X3C;
-	GPIO_PORTE_DIR_R|= ~0x3C; // set column pin 4-1 as input
-	//NOTE MARG3 3AMLHA KEDA GPIO_PORTA_DIR_R&= ~0x3C;
-	GPIO_PORTE_DEN_R|= 0x3C; //set column pin 4-1 as digital pins
-	GPIO_PORTE_PUR_R |= 0x3C;// enable pull-ups for pin 4-1
-
-}*/
 
 void switch3_buzzer_init(void){
 		SYSCTL_RCGCGPIO_R |=0x10;
@@ -48,18 +35,13 @@ void GPIOPortE_Handler(void)
 	if(isPlay){
 		isPlay=false;
 	isPaused=!isPaused;
-	
 		GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
 		SysTick_Wait10ms(2);
 	LCD_Clear();
 	 LCD_OutString("Pause ");
-	 //snprintf (buffer , 10 , "%d",x);
 		LCD_OutString(buffer); 
 	 SysTick_Wait10ms(20);
 		GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
-	//GPIO_PORTF_DATA_R ^= 0x04; 
-  //LCD_OutUHex(GPIO_PORTF_DATA_R);
-	 //SysTick_Wait10ms(20);
 		while(1){
 			GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
 		SysTick_Wait10ms(2);
