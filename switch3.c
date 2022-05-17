@@ -22,7 +22,7 @@ void switch3_buzzer_init(void){
   GPIO_PORTE_IBE_R &= ~0x10;    //     PF4 is not both edges
   GPIO_PORTE_IEV_R &= ~0x10;    //     PF4 falling edge event
   GPIO_PORTE_ICR_R = 0x10;      // (e) clear flag4
-  GPIO_PORTE_IM_R |= 0x10;      // (f) arm interrupt on PF4 *** No IME bit as mentioned in Book ***
+  GPIO_PORTE_IM_R |= 0x10;      // (f) arm interrupt on PF4
   NVIC_PRI1_R = (NVIC_PRI1_R&0xFFFFFF00)|0x00000040; // PortE=priority 2
   NVIC_EN0_R |= 0x10;      // (h) enable interrupt 4 in NVIC
   EnableInterrupts();           // (i) Clears the I bit

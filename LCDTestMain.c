@@ -16,13 +16,12 @@
 
 
 int y ;
- int time;
+int time;
 
 int main(void){
 	switch3_buzzer_init();
   unsigned char key ;
 	unsigned char weight=0;
-	
   LCD_Init(); 	
 	keypad_Init();
   LCD_Clear();
@@ -32,36 +31,23 @@ int main(void){
 	
 		
 while(1){
-	
- 
- 
 	LCD_Clear();
 		key=keypad_getkey();
 switch(key){
 case 'A':
 					LCD_OutString("Popcorn");
           SysTick_Wait10ms(50);
-          
-
 					counting(0,6);
-
-			
 					break;
 case 'B':
-
-
        LCD_Clear();
 			LCD_OutString("Beef weight?");
           OutCmd(0xC0); ////Set LCD Cursor to second line
            SysTick_Wait10ms(10);
 int l=0;
-  
-
-	
 de:
  weight=keypad_getkey();
 if (weight!=0){
-
 	LCD_OutChar(weight);
 	SysTick_Wait10ms(20);
 	 int we=weight-'0';
@@ -70,20 +56,15 @@ if (weight!=0){
 			  x=  calcTime(time)[0];
 			 y= calcTime(time)[1];
 			 LCD_Clear();
-	    LCD_OutString(buffer);
-			 
-			
+	    LCD_OutString(buffer);	
 		 }else{
 		   LCD_Clear();
 			 LCD_OutString("Err");
 			 SysTick_Wait10ms(50);
 			 break;
 		 }
-	
-	
 					counting(x,y);
  	}
-
 else
 {
 	
@@ -105,9 +86,6 @@ case 'C':
 									LCD_OutString("Chicken weight?");
           OutCmd(0xC0); ////Set LCD Cursor to second line
            SysTick_Wait10ms(10);
-  
-
-
 int k =0;
 deh:
 
@@ -127,44 +105,29 @@ if (weight!=0){
 			 }
 			 x=  calcTime(time)[0];
 			 y= calcTime(time)[1];
-			 //x=time/60; //minutes
-			 //y=time -(x*60); //seconds
 			 snprintf(buffer,10,"%02d",x);
 			 strcat(buffer, ":");	
-		/*	 snprintf(buffer2,10,"%02d",y);
-			 strcat(buffer,buffer2);*/
 			 LCD_Clear();
 	    LCD_OutString(buffer);
-			 
-			
 		 }else{
 		   LCD_Clear();
 			 LCD_OutString("Err");
 			 SysTick_Wait10ms(50);
 			 break;
 		 }
-
 		 counting(x,y);
-
 }
 else
 {
-	
 	while(k<100){
 		SysTick_Wait10ms(1);
-		
-	
 	k++;
 	goto deh;
-		
-	
 	}
-	
 	break;
 }
 break;
 	
-
 case 'D':
 					LCD_OutString("Cooking time?");
 
@@ -181,5 +144,4 @@ default:
 SysTick_Wait10ms(20);
 	 
 	 } 
-
 }

@@ -16,8 +16,7 @@ void SysTick_Init(void){
                                         // enable SysTick with core clock
   NVIC_ST_CTRL_R = NVIC_ST_CTRL_ENABLE+NVIC_ST_CTRL_CLK_SRC;
 }
-// Time delay using busy wait.
-// The delay parameter is in units of the core clock. 
+
 void SysTick_Wait(uint32_t delay){
   volatile uint32_t elapsedTime;
   uint32_t startTime = NVIC_ST_CURRENT_R;

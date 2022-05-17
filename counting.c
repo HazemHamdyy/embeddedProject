@@ -68,11 +68,6 @@ while(!(min==-1)&isPlay){
 				LEDS_BLINK_3times ();
 				
 			GPIO_PORTE_DATA_R|=0X20;
-			/*LEDS_OFF ();
-		GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;*/
-				
-				
-			
 			}
 					break;}else{
 						snprintf(buffer,10,"%02d",min);  //to convert minutes and seconds into strings

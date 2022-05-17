@@ -5,7 +5,7 @@
 int CookingTime_case_B( int w)
 	{ 
 		int timeps;
-    timeps=	0.5*w*60; //time in second
+    timeps=	0.5*w*60;
 		return timeps;
 	}
 	

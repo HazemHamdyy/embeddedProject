@@ -245,29 +245,8 @@ void read_write(){
 	key=keypad_getkey();
 		if(((key-'0')>=0) && ((key-'0')<=9)){
 			if (key !=0){
-				//button = sw_input();
-				/*if ( (GPIO_PORTF_DATA_R&01) == 0) {
-					  m = duration();
-						snprintf (buffer, 10, "%d", m);
-						LCD_OutString(buffer);
-					//if (((int)temp[0]) > 3 || ((int)temp[3]) > 5){
-						LCD_OutString("Invalid `	Num");
-						read_write();
-					}*/
-					/*else {
-						m = duration();
-						snprintf (buffer, 10, "%d", m);
-						LCD_OutString(buffer);
-					}*/
-				//*/
-				//else /*(button != sw2_pressed)*/
-				
 					n = get_input();
-					//shift(arr, n);
-					//print(temp);
 					show_user_value(n);
-					//SysTick_Wait10ms(100);
-					//goto dee;
 				}else
 			{
 				goto dee;
@@ -278,8 +257,7 @@ void read_write(){
 			{
 				goto dee;
 			}
-		
-}
+		}
 	if(((temp[0] - '0') > 2) || ((temp[3] - '0') >5 )){
 		SysTick_Wait10ms(20);
 		LCD_Clear();
