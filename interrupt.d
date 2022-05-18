@@ -8,3 +8,4 @@
 .\interrupt.o: tm4c123gh6pm.h
 .\interrupt.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
 .\interrupt.o: leds.h
+.\interrupt.o: caseD.h

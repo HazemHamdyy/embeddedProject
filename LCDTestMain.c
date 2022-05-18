@@ -11,15 +11,19 @@
 #include "case B-C.h"
 #include "leds.h"
 #include "switch3.h"
+#include "caseD.h"
+#include "lcdCommand.h"
 
 
 int y ;
+int a;
+int b;
  int time;
 //char buffer2 [5];
 int main(void){
-	switch3_buzzer_init();
+ 	switch3_buzzer_init();
   unsigned char key ;
-	unsigned char weight='3';
+	unsigned char weight=0;
 	
   LCD_Init(); 	
 	keypad_Init();
@@ -38,7 +42,7 @@ while(1){
 switch(key){
 case 'A':
 					LCD_OutString("Popcorn");
-          SysTick_Wait10ms(100);
+          SysTick_Wait10ms(50);
           
 
 					counting(0,60);
@@ -52,6 +56,7 @@ case 'B':
 			LCD_OutString("Beef weight?");
           OutCmd(0xC0); ////Set LCD Cursor to second line
            SysTick_Wait10ms(10);
+int l=0;
   
 
 	
@@ -64,14 +69,16 @@ if (weight!=0){
 	 int we=weight-'0';
 		 if((we>=1) && (we<=9)){
      time=CookingTime_case_B(we);
-			 x=time/60; //minutes
-			 y=time -(x*60); //seconds
+			  a=  calcTime(time)[0];
+			 b= calcTime(time)[1];
+			 //x=time/60; //minutes
+			 //y=time -(x*60); //seconds
 			/* snprintf(buffer,10,"%02d",x);
 			 strcat(buffer, ":");	
 			 snprintf(buffer2,10,"%02d",y);
 			 strcat(buffer,buffer2);*/
 			 LCD_Clear();
-	    LCD_OutString(buffer);
+	    //LCD_OutString(buffer);
 			 
 			
 		 }else{
@@ -82,15 +89,21 @@ if (weight!=0){
 		 }
 	
 	
-					counting(x,y);
+					counting(a,b);
  	}
 
 else
 {
 	
-	SysTick_Wait10ms(10);
+	while(l<100){
+		SysTick_Wait10ms(1);
+		
 	
+	l++;
 	goto de;
+		
+	
+	}
 
 }
 	break;
@@ -104,8 +117,11 @@ case 'C':
 
 	//char buffer2[5];
 	 //weight=keypad_getkey();
+int k =0;
 deh:
+
  weight=keypad_getkey();
+
 if (weight!=0){
 
 	LCD_OutChar(weight);
@@ -113,8 +129,15 @@ if (weight!=0){
 	 int we=weight-'0';
 		 if((we>=1) && (we<=9)){
      time=CookingTime_case_C(we);
-			 x=time/60; //minutes
-			 y=time -(x*60); //seconds
+			 if(time>1800){
+				 LCD_Clear();
+				 LCD_OutString("TIME OVER 30");
+				 goto deh;
+			 }
+			 x=  calcTime(time)[0];
+			 y= calcTime(time)[1];
+			 //x=time/60; //minutes
+			 //y=time -(x*60); //seconds
 			 snprintf(buffer,10,"%02d",x);
 			 strcat(buffer, ":");	
 		/*	 snprintf(buffer2,10,"%02d",y);
@@ -136,9 +159,16 @@ if (weight!=0){
 else
 {
 	
-	SysTick_Wait10ms(10);
+	while(k<100){
+		SysTick_Wait10ms(1);
+		
 	
+	k++;
 	goto deh;
+		
+	
+	}
+	
 	break;
 }
 break;
@@ -146,12 +176,20 @@ break;
 
 case 'D':
 					LCD_OutString("Cooking time?");
+
+					SysTick_Wait10ms(50);
+					read_write();
+					int m = duration();
+          //calcTime(m);
+					counting(calcTime(m)[0],calcTime(m)[1]);
 					break;
 default:
      LCD_OutString("CHOOSE YOUR MEAL");
+
      break;
 }
-  SysTick_Wait10ms(20);
+SysTick_Wait10ms(20);
+  //SysTick_Wait10ms(20);
 	 
 	 } 
 

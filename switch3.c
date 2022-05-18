@@ -50,6 +50,7 @@ void GPIOPortE_Handler(void)
 	isPaused=!isPaused;
 	
 		GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
+		SysTick_Wait10ms(2);
 	LCD_Clear();
 	 LCD_OutString("Pause ");
 	 //snprintf (buffer , 10 , "%d",x);
@@ -60,6 +61,8 @@ void GPIOPortE_Handler(void)
   //LCD_OutUHex(GPIO_PORTF_DATA_R);
 	 //SysTick_Wait10ms(20);
 		while(1){
+			GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
+		SysTick_Wait10ms(2);
 					if((GPIO_PORTF_DATA_R&0x10)==0){
 		isPlay=false;
 			LEDS_OFF ();

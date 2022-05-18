@@ -450,6 +450,11 @@
               <FileType>1</FileType>
               <FilePath>.\switch3.c</FilePath>
             </File>
+            <File>
+              <FileName>counting.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\counting.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
