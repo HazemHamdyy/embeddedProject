@@ -3,8 +3,8 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\Hazem\Downloads\CASE ABCD counting func 5\CASE ABCD counting func 5\LCD.uvproj
-Project File Date:  05/16/2022
+E:\embeddedProject\LCD.uvproj
+Project File Date:  05/19/2022
 
 <h2>Output:</h2>
 Build target 'LCD'
@@ -17,16 +17,50 @@ caseD.h(12): warning:  #1295-D: Deprecated declaration duration - give arg types
   int duration();
 caseD.h(13): warning:  #1-D: last line of file ends without a newline
   extern  bool caseD ;
-LCDTestMain.c(42): warning:  #546-D: transfer of control bypasses initialization of:
-            variable "l" (declared at line 59)
-            variable "k" (declared at line 120)
-            variable "m" (declared at line 182)
-  switch(key){
+LCDTestMain.c(36): warning:  #546-D: transfer of control bypasses initialization of:
+            variable "l" (declared at line 71)
+            variable "k" (declared at line 132)
+  switch(state){
   ^
-LCDTestMain.c: 5 warnings, 0 errors
+LCDTestMain.c(31): warning:  #550-D: variable "key" was set but never used
+         unsigned char key ;
+LCDTestMain.c: 6 warnings, 0 errors
 linking...
-Program Size: Code=6544 RO-data=68 RW-data=84 ZI-data=1124  
-".\LCD.axf" - 0 Error(s), 5 Warning(s).
+Program Size: Code=6548 RO-data=68 RW-data=88 ZI-data=1120  
+".\LCD.axf" - 0 Error(s), 6 Warning(s).
 </pre>
 </body>
 </html>
+d char key ;
+LCDTestMain.c: 7 warnings, 1 error
+".\LCD.axf" - 1 Error(s), 7 Warning(s).
+Target not created
+ caseD ;
+interrupt.c: 3 warnings, 0 errors
+compiling leds.c...
+compiling switch3.c...
+compiling counting.c...
+switch3.h(2): warning:  #1-D: last line of file ends without a newline
+  void GPIOPortE_Handler(void);
+counting.c(22): warning:  #1166-D: returning pointer to local variable
+        return arrOfTime;
+counting.c(96): warning:  #1-D: last line of file ends without a newline
+  }
+counting.c: 3 warnings, 0 errors
+compiling caseD.c...
+caseD.c(154): warning:  #111-D: statement is unreachable
+                        break;
+caseD.c(246): warning:  #186-D: pointless comparison of unsigned integer with zero
+                if(((key-'0')>=0) && ((key-'0')<=9)){
+caseD.c(290): warning:  #1-D: last line of file ends without a newline
+        }
+caseD.c(231): warning:  #177-D: variable "buffer" was declared but never referenced
+        char buffer [5];
+caseD.c: 4 warnings, 0 errors
+compiling LcdCommand.c...
+LcdCommand.c(71): warning:  #1-D: last line of file ends without a newline
+  }
+LcdCommand.c: 1 warning, 0 errors
+linking...
+Program Size: Code=6532 RO-data=68 RW-data=88 ZI-data=1120  
+".\LCD.axf" - 0 Error(s), 16 Warning(s).

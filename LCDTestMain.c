@@ -13,33 +13,45 @@
 #include "switch3.h"
 #include "caseD.h"
 #include "lcdCommand.h"
-
-
 int y ;
 int a;
 int b;
  int time;
+ enum {
+	Idle_case,
+	Case_A,
+	Case_B,
+	Case_C,
+	Case_D,
+	Counting,
+	Err} State_type;
+
 //char buffer2 [5];
 int main(void){
- 	switch3_buzzer_init();
-  unsigned char key ;
+	 unsigned char key ;
 	unsigned char weight=0;
-	
+	 int state= Idle_case;
+	while(1){
+		
+switch(state){
+	case Idle_case:
+ 	switch3_buzzer_init();
+ 
   LCD_Init(); 	
 	keypad_Init();
   LCD_Clear();
   LCD_OutString("Test LCD");
   SysTick_Wait10ms(10);
 	EdgeCounter_Init();
-	
-		
-while(1){
-	
- 
- 
-	LCD_Clear();
+		LCD_Clear();
 		key=keypad_getkey();
-switch(key){
+		 LCD_OutString("CHOOSE YOUR MEAL");
+		
+
+	
+ 
+ 
+
 case 'A':
 					LCD_OutString("Popcorn");
           SysTick_Wait10ms(50);
@@ -183,10 +195,8 @@ case 'D':
           //calcTime(m);
 					counting(calcTime(m)[0],calcTime(m)[1]);
 					break;
-default:
-     LCD_OutString("CHOOSE YOUR MEAL");
 
-     break;
+
 }
 SysTick_Wait10ms(20);
   //SysTick_Wait10ms(20);
