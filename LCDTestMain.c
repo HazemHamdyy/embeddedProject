@@ -28,6 +28,19 @@ int m;
 	Case_D,
 	Counting,
 	Err} State_type;
+ enum{
+	 SW1_pressed,
+	 SW2_pressed,
+	 SW3_pressed,
+	 invalidnum,
+ } transitions;
+ enum{
+	 leds_on,
+	 buzzer_on,
+	 count_down,
+	 set_time,
+	 set_weight} actions;
+	 
  int previous_state;
  int state= Idle_case;
 	
@@ -65,7 +78,7 @@ switch (state) {
           SysTick_Wait10ms(50);
           
 
-					counting(0,60);
+				    state=Counting;
 
 			
 					break;
@@ -107,7 +120,7 @@ if (weight!=0){
 		 }
 	
 	
-					counting(a,b);
+			    state=Counting;
  	}
 
 else
@@ -170,7 +183,7 @@ if (weight!=0){
 			 break;
 		 }
 
-		 counting(x,y);
+	    state=Counting;
 
 }
 else
@@ -199,8 +212,19 @@ case Case_D:
 					read_write();
 					int m = duration();
           //calcTime(m);
-					counting(calcTime(m)[0],calcTime(m)[1]);
+					state = Counting;
 					break;
+case Counting:
+	if(previous_state==Case_A)
+	{counting(0,60);}
+	else if(previous_state==Case_B)
+	{counting(a,b);}
+	else if(previous_state==Case_C)
+	{counting(x,y);}
+	else if(previous_state==Case_D)
+	{counting(calcTime(m)[0],calcTime(m)[1]);}
+	state=Idle_case;
+	break;
 	case Err:
 		 LCD_Clear();
 			 LCD_OutString("Err");
