@@ -7,6 +7,25 @@ E:\embeddedProject\LCD.uvproj
 Project File Date:  05/19/2022
 
 <h2>Output:</h2>
+Build target 'LCD'
+compiling LCDTestMain.c...
+switch3.h(2): warning:  #1-D: last line of file ends without a newline
+  void GPIOPortE_Handler(void);
+caseD.h(9): warning:  #1295-D: Deprecated declaration read_write - give arg types
+  void read_write();
+caseD.h(12): warning:  #1295-D: Deprecated declaration duration - give arg types
+  int duration();
+caseD.h(13): warning:  #1-D: last line of file ends without a newline
+  extern  bool caseD ;
+LCDTestMain.c(46): warning:  #546-D: transfer of control bypasses initialization of:
+            variable "l" (declared at line 72)
+            variable "k" (declared at line 131)
+  switch (state) {
+  ^
+LCDTestMain.c: 5 warnings, 0 errors
+linking...
+Program Size: Code=6756 RO-data=68 RW-data=100 ZI-data=1124  
+".\LCD.axf" - 0 Error(s), 5 Warning(s).
 </pre>
 </body>
 </html>

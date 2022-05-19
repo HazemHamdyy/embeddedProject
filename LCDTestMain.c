@@ -28,19 +28,6 @@ int m;
 	Case_D,
 	Counting,
 	Err} State_type;
- enum{
-	 SW1_pressed,
-	 SW2_pressed,
-	 SW3_pressed,
-	 invalidnum,
- } transitions;
- enum{
-	 leds_on,
-	 buzzer_on,
-	 count_down,
-	 set_time,
-	 set_weight} actions;
-	 
  int previous_state;
  int state= Idle_case;
 	
@@ -70,25 +57,18 @@ switch (state) {
 		 state=Idle_case;
 	 }
 	 break;
- 
-
-	case Case_A:
+	case Case_A :
 		previous_state=Case_A;
-					LCD_OutString("Popcorn");
-          SysTick_Wait10ms(50);
-          
-
-				    state=Counting;
-
-			
-					break;
-case Case_B:
-previous_state=Case_B;
-
-       LCD_Clear();
+		LCD_OutString("Popcorn");
+    SysTick_Wait10ms(50);
+	  state=Counting;
+    break;
+	case Case_B :
+		previous_state=Case_B;
+		  LCD_Clear();
 			LCD_OutString("Beef weight?");
-          OutCmd(0xC0); ////Set LCD Cursor to second line
-           SysTick_Wait10ms(10);
+      OutCmd(0xC0); ////Set LCD Cursor to second line
+      SysTick_Wait10ms(10);
 int l=0;
   
 
@@ -115,12 +95,11 @@ if (weight!=0){
 			 
 			
 		 }else{
-		     state=Err;
+		   state=Err;
 			 break;
 		 }
 	
-	
-			    state=Counting;
+	    state=Counting;
  	}
 
 else
@@ -139,12 +118,12 @@ else
 }
 	break;
 
-
-case Case_C:
-	previous_state=Case_C;
-									LCD_OutString("Chicken weight?");
-          OutCmd(0xC0); ////Set LCD Cursor to second line
-           SysTick_Wait10ms(10);
+	case Case_C : 
+		previous_state=Case_C;
+	LCD_Clear();
+		LCD_OutString("Chicken weight?");
+    OutCmd(0xC0); ////Set LCD Cursor to second line
+    SysTick_Wait10ms(10);
   
 
 	//char buffer2[5];
@@ -179,11 +158,10 @@ if (weight!=0){
 			 
 			
 		 }else{
-		    state=Err;
+		  state=Err;
 			 break;
 		 }
-
-	    state=Counting;
+      state=Counting;
 
 }
 else
@@ -202,19 +180,19 @@ else
 	break;
 }
 break;
-	
-
-case Case_D:
-	previous_state=Case_D;
-					LCD_OutString("Cooking time?");
+		
+	case Case_D :
+		
+		previous_state=Case_D;
+				LCD_OutString("Cooking time?");
 
 					SysTick_Wait10ms(50);
 					read_write();
-					int m = duration();
+					 m = duration();
           //calcTime(m);
-					state = Counting;
+	state = Counting;
 					break;
-case Counting:
+	case Counting:
 	if(previous_state==Case_A)
 	{counting(0,60);}
 	else if(previous_state==Case_B)
@@ -225,6 +203,7 @@ case Counting:
 	{counting(calcTime(m)[0],calcTime(m)[1]);}
 	state=Idle_case;
 	break;
+	
 	case Err:
 		 LCD_Clear();
 			 LCD_OutString("Err");
@@ -234,12 +213,13 @@ case Counting:
 		else if(previous_state==Case_C)
 		{state=Case_C;}
 			 break;
-
-
+		
 }
-SysTick_Wait10ms(20);
+	SysTick_Wait10ms(20);
   //SysTick_Wait10ms(20);
-	 
-	 } 
-
 }
+	}
+	
+
+
+
