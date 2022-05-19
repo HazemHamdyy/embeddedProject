@@ -188,7 +188,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>264</TopLine>
+      <TopLine>265</TopLine>
       <CurrentLine>277</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\startup.s</PathWithFileName>
@@ -202,10 +202,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>1</ColumnNumber>
+      <ColumnNumber>6</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>21</TopLine>
-      <CurrentLine>53</CurrentLine>
+      <TopLine>90</TopLine>
+      <CurrentLine>107</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\LCDTestMain.c</PathWithFileName>
       <FilenameWithoutPath>LCDTestMain.c</FilenameWithoutPath>
@@ -220,7 +220,7 @@
       <Focus>0</Focus>
       <ColumnNumber>60</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>14</TopLine>
+      <TopLine>15</TopLine>
       <CurrentLine>18</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\SysTick.c</PathWithFileName>
@@ -236,7 +236,7 @@
       <Focus>0</Focus>
       <ColumnNumber>1</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>15</TopLine>
+      <TopLine>24</TopLine>
       <CurrentLine>48</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\lcd.c</PathWithFileName>
