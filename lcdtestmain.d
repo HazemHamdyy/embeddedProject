@@ -14,3 +14,4 @@
 .\lcdtestmain.o: switch3.h
 .\lcdtestmain.o: caseD.h
 .\lcdtestmain.o: lcdCommand.h
+.\lcdtestmain.o: counting.h

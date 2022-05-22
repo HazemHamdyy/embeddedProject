@@ -34,13 +34,13 @@
 void OutCmd(unsigned char command){
   LCDDATA = command;
   LCDCMD = 0;           // E=0, R/W=0, RS=0
-	SysTick_Wait1microsec(6);
+	SysTick_Wait1microsec(30);
   //SysTick_Wait(T6us);   // wait 6us
   LCDCMD = E;           // E=1, R/W=0, RS=0
-	SysTick_Wait1microsec(6);
+	SysTick_Wait1microsec(30);
   //SysTick_Wait(T6us);   // wait 6us
   LCDCMD = 0;           // E=0, R/W=0, RS=0
-	SysTick_Wait1microsec(40);
+	SysTick_Wait1microsec(200);
   //SysTick_Wait(T40us);  // wait 40us
 }
 
@@ -64,16 +64,16 @@ void LCD_Init(void){ volatile long delay;
   GPIO_PORTA_DR8R_R |= 0xC0;
   SysTick_Init();       
   LCDCMD = 0;           // E=0, R/W=0, RS=0
-	SysTick_Wait1microsec(15000);
+	SysTick_Wait1microsec(75000);
   //SysTick_Wait(T15ms);  // Wait >15 ms after power is applied
   OutCmd(0x30);         // command 0x30 = Wake up
-	SysTick_Wait1microsec(5000);
+	SysTick_Wait1microsec(25000);
   //SysTick_Wait(T5ms);   // must wait 5ms, busy flag not available
   OutCmd(0x30);         // command 0x30 = Wake up #2
-	SysTick_Wait1microsec(160);
+	SysTick_Wait1microsec(800);
   //SysTick_Wait(T160us); // must wait 160us, busy flag not available
   OutCmd(0x30);         // command 0x30 = Wake up #3
-	SysTick_Wait1microsec(160);
+	SysTick_Wait1microsec(800);
   //SysTick_Wait(T160us); // must wait 160us, busy flag not available
   OutCmd(0x38);         // Function set: 8-bit/2-line
   OutCmd(0x10);         // Set cursor
@@ -86,13 +86,13 @@ void LCD_Init(void){ volatile long delay;
 void LCD_OutChar(unsigned char letter){
   LCDDATA = letter;
   LCDCMD = RS;          // E=0, R/W=0, RS=1
-	SysTick_Wait1microsec(6);
+	SysTick_Wait1microsec(30);
   //SysTick_Wait(T6us);   // wait 6us
   LCDCMD = E+RS;        // E=1, R/W=0, RS=1
-	SysTick_Wait1microsec(6);
+	SysTick_Wait1microsec(30);
   //SysTick_Wait(T6us);   // wait 6us
   LCDCMD = RS;          // E=0, R/W=0, RS=1
-	SysTick_Wait1microsec(40);
+	SysTick_Wait1microsec(200);
   //SysTick_Wait(T40us);  // wait 40us
 }
 
@@ -101,10 +101,10 @@ void LCD_OutChar(unsigned char letter){
 // Outputs: none
 void LCD_Clear(void){
   OutCmd(0x01);          // Clear Display
-	SysTick_Wait1microsec(1600);
+	SysTick_Wait1microsec(8000);
   //SysTick_Wait(T1600us); // wait 1.6ms
   OutCmd(0x02);          // Cursor to home
-	SysTick_Wait1microsec(1600);
+	SysTick_Wait1microsec(8000);
   //SysTick_Wait(T1600us); // wait 1.6ms
 }
 

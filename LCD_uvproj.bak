@@ -455,16 +455,6 @@
               <FileType>1</FileType>
               <FilePath>.\counting.c</FilePath>
             </File>
-            <File>
-              <FileName>caseD.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\caseD.c</FilePath>
-            </File>
-            <File>
-              <FileName>LcdCommand.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\LcdCommand.c</FilePath>
-            </File>
           </Files>
         </Group>
       </Groups>

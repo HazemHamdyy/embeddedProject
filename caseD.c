@@ -237,7 +237,7 @@ void read_write(){
 			if(((temp[0] - '0') > 2) || ((temp[3] - '0') >5 )){
 		LCD_Clear();
 		LCD_OutString("Invalid Num");
-		SysTick_Wait10ms(50);
+		SysTick_Wait10ms(250);
 		goto invalid;
 	}
 			break;
@@ -281,10 +281,10 @@ void read_write(){
 		
 }
 	if(((temp[0] - '0') > 2) || ((temp[3] - '0') >5 )){
-		SysTick_Wait10ms(20);
+		SysTick_Wait10ms(100);
 		LCD_Clear();
 		LCD_OutString("Invalid Num");
-		SysTick_Wait10ms(50);
+		SysTick_Wait10ms(250);
 		goto invalid;
 	}
 	}

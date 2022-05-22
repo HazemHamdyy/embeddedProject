@@ -28,40 +28,24 @@ void SysTick_Wait(uint32_t delay){
   while(elapsedTime <= delay);
 }
 
-/*
-code dr ashraf
-
-void Systick_wait(uint32_t delay){
-	 NVIC_ST_RELOAD_R= delay-1;
-	 NVIC_ST_CURRENT_R=0;	
-		while((NVIC_ST_CTRL_R & 0x010000)==0){}
-	}
-
-
-*/
-
-
-
-
-
 // Time delay using busy wait.
-// This assumes  80 MHz system clock.
+// This assumes  16 MHz system clock.
 void SysTick_Wait10ms(uint32_t delay){
   uint32_t i;
   for(i=0; i<delay; i++){
-    SysTick_Wait(800000);  // wait 10ms (assumes 80 MHz clock)
+    SysTick_Wait(160000);  // wait 10ms (assumes 16 MHz clock)
   }
 }
 void SysTick_Wait1microsec(uint32_t delay){
   uint32_t i;
   for(i=0; i<delay; i++){
-    SysTick_Wait(80);  // wait 10us (assumes 80 MHz clock)
+    SysTick_Wait(16);  // wait 1us (assumes 16 MHz clock)
   }
 }
 void SysTick_Wait1s(uint32_t delay)
 {
   uint32_t i;
   for(i=0; i<delay; i++){
-    SysTick_Wait(800000);  // wait 1ms (assumes 80 MHz clock)
+    SysTick_Wait(16000000);  // wait 1ms (assumes 16 MHz clock)
   }
 }

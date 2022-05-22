@@ -12,3 +12,5 @@
 .\counting.o: case B-C.h
 .\counting.o: leds.h
 .\counting.o: switch3.h
+.\counting.o: counting.h
+.\counting.o: stateEnum.h
