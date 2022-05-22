@@ -41,25 +41,25 @@ void keypad_Init(void){
 		{
 			row=0;
 			GPIO_PORTE_DATA_R=0X0E;
-			SysTick_Wait1microsec(2);
+			SysTick_Wait1microsec(10);
 			col=GPIO_PORTA_DATA_R & 0x3C;
 			if(col !=0X3C) break;
 			
 			row=1;
 		  GPIO_PORTE_DATA_R=0X0D;
-			SysTick_Wait1microsec(2);
+			SysTick_Wait1microsec(10);
 			col=GPIO_PORTA_DATA_R & 0x3C;
 			if(col !=0X3C) break;
 			
 			row=2;
 			GPIO_PORTE_DATA_R=0X0B;
-			SysTick_Wait1microsec(2);
+			SysTick_Wait1microsec(10);
 			col=GPIO_PORTA_DATA_R & 0x3C;
 			if(col !=0X3C) break;
 			
 			row=3;
 			GPIO_PORTE_DATA_R=0X07;
-			SysTick_Wait1microsec(2);
+			SysTick_Wait1microsec(10);
 			col=GPIO_PORTA_DATA_R & 0x3C;
 			if(col !=0X3C) break;
 			return 0; //if no key is pressed

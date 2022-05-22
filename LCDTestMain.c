@@ -13,184 +13,70 @@
 #include "switch3.h"
 #include "caseD.h"
 #include "lcdCommand.h"
+#include "counting.h"
 
-
-int y ;
-int a;
-int b;
- int time;
-//char buffer2 [5];
+ int globalTime;
+ enum state {
+ case_A,case_B,case_C,case_D,idle_case,counting_state
+ }state;
+ 
 int main(void){
+		state=idle_case;
+	
  	switch3_buzzer_init();
   unsigned char key ;
-	unsigned char weight=0;
 	
   LCD_Init(); 	
 	keypad_Init();
   LCD_Clear();
   LCD_OutString("Test LCD");
-  SysTick_Wait10ms(10);
+  SysTick_Wait10ms(50);
 	EdgeCounter_Init();
 	
 		
 while(1){
-	
- 
- 
 	LCD_Clear();
-		key=keypad_getkey();
-switch(key){
-case 'A':
+switch(state){
+case case_A:
 					LCD_OutString("Popcorn");
-          SysTick_Wait10ms(50);
-          
-
-					counting(0,60);
-
-			
+          SysTick_Wait10ms(200);
+          globalTime=60;
+					state=counting_state;
 					break;
-case 'B':
-
-
+case case_B:
        LCD_Clear();
-			LCD_OutString("Beef weight?");
+			 LCD_OutString("Beef weight?");
+       OutCmd(0xC0); ////Set LCD Cursor to second line
+        SysTick_Wait10ms(50);
+        beefAndChicken(30);
+      	break;
+case case_C:
+					LCD_OutString("Chicken weight?");
           OutCmd(0xC0); ////Set LCD Cursor to second line
-           SysTick_Wait10ms(10);
-int l=0;
-  
-
-	
-de:
- weight=keypad_getkey();
-if (weight!=0){
-
-	LCD_OutChar(weight);
-	SysTick_Wait10ms(20);
-	 int we=weight-'0';
-		 if((we>=1) && (we<=9)){
-     time=CookingTime_case_B(we);
-			  a=  calcTime(time)[0];
-			 b= calcTime(time)[1];
-			 //x=time/60; //minutes
-			 //y=time -(x*60); //seconds
-			/* snprintf(buffer,10,"%02d",x);
-			 strcat(buffer, ":");	
-			 snprintf(buffer2,10,"%02d",y);
-			 strcat(buffer,buffer2);*/
-			 LCD_Clear();
-	    //LCD_OutString(buffer);
-			 
-			
-		 }else{
-		   LCD_Clear();
-			 LCD_OutString("Err");
-			 SysTick_Wait10ms(50);
-			 break;
-		 }
-	
-	
-					counting(a,b);
- 	}
-
-else
-{
-	
-	while(l<100){
-		SysTick_Wait10ms(1);
-		
-	
-	l++;
-	goto de;
-		
-	
-	}
-
-}
-	break;
-
-
-case 'C':
-									LCD_OutString("Chicken weight?");
-          OutCmd(0xC0); ////Set LCD Cursor to second line
-           SysTick_Wait10ms(10);
-  
-
-	//char buffer2[5];
-	 //weight=keypad_getkey();
-int k =0;
-deh:
-
- weight=keypad_getkey();
-
-if (weight!=0){
-
-	LCD_OutChar(weight);
-	SysTick_Wait10ms(10);
-	 int we=weight-'0';
-		 if((we>=1) && (we<=9)){
-     time=CookingTime_case_C(we);
-			 if(time>1800){
-				 LCD_Clear();
-				 LCD_OutString("TIME OVER 30");
-				 goto deh;
-			 }
-			 x=  calcTime(time)[0];
-			 y= calcTime(time)[1];
-			 //x=time/60; //minutes
-			 //y=time -(x*60); //seconds
-			 snprintf(buffer,10,"%02d",x);
-			 strcat(buffer, ":");	
-		/*	 snprintf(buffer2,10,"%02d",y);
-			 strcat(buffer,buffer2);*/
-			 LCD_Clear();
-	    LCD_OutString(buffer);
-			 
-			
-		 }else{
-		   LCD_Clear();
-			 LCD_OutString("Err");
-			 SysTick_Wait10ms(50);
-			 break;
-		 }
-
-		 counting(x,y);
-
-}
-else
-{
-	
-	while(k<100){
-		SysTick_Wait10ms(1);
-		
-	
-	k++;
-	goto deh;
-		
-	
-	}
-	
-	break;
-}
-break;
+           SysTick_Wait10ms(50);
+           beefAndChicken(12);
+           break;
 	
 
-case 'D':
+case case_D:
 					LCD_OutString("Cooking time?");
-
-					SysTick_Wait10ms(50);
+					SysTick_Wait10ms(200);
 					read_write();
-					int m = duration();
-          //calcTime(m);
-					counting(calcTime(m)[0],calcTime(m)[1]);
+					globalTime = duration();
+          state=counting_state;
 					break;
-default:
-     LCD_OutString("CHOOSE YOUR MEAL");
-
-     break;
+case idle_case:
+       LCD_OutString("CHOOSE YOUR MEAL");
+       if(keypad_getkey()){
+	     state=keypad_getkey()-'A';
+       }else{
+       state=idle_case;
+       }
+       break;
+case counting_state:
+	     counting(calcTime(globalTime)[0],calcTime(globalTime)[1]);
+	     break;
 }
-SysTick_Wait10ms(20);
-  //SysTick_Wait10ms(20);
-	 
+       SysTick_Wait10ms(100);
 	 } 
-
 }

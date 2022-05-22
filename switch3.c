@@ -47,30 +47,24 @@ void GPIOPortE_Handler(void)
 	GPIO_PORTE_ICR_R = 0x10;
 	if(isPlay){
 		isPlay=false;
-	isPaused=!isPaused;
-	
 		GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
-		SysTick_Wait10ms(2);
-	LCD_Clear();
+		SysTick_Wait10ms(10);
+	 LCD_Clear();
 	 LCD_OutString("Pause ");
-	 //snprintf (buffer , 10 , "%d",x);
 		LCD_OutString(buffer); 
-	 SysTick_Wait10ms(20);
+	 SysTick_Wait10ms(100);
 		GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
-	//GPIO_PORTF_DATA_R ^= 0x04; 
-  //LCD_OutUHex(GPIO_PORTF_DATA_R);
-	 //SysTick_Wait10ms(20);
 		while(1){
 			GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
-		SysTick_Wait10ms(2);
+		  SysTick_Wait10ms(10);
 					if((GPIO_PORTF_DATA_R&0x10)==0){
 		isPlay=false;
 			LEDS_OFF ();
 		break;}
-					if(GPIO_PORTE_DATA_R&0x10){
-					if((!(GPIO_PORTF_DATA_R&1))){
-		isPaused=false;
+		 if(GPIO_PORTE_DATA_R&0x10){
+			if((!(GPIO_PORTF_DATA_R&1))){
 			isPlay=true;
+			LEDS_ON ();
 			break;
 		}}
 		}

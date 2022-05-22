@@ -9,9 +9,7 @@
 #include "leds.h"
 #include "caseD.h"
 
-int x=0 ;
 bool isPlay=false ;
-bool isPaused=false ;
 char buffer [5];
 volatile uint32_t FallingEdges = 0;
 void EnableInterrupts(void);  // Enable interrupts
@@ -23,9 +21,7 @@ void EdgeCounter_Init(void){
 	GPIO_PORTF_LOCK_R = 0x4C4F434B;	// (b) initialize counter
 	GPIO_PORTF_CR_R=0x1F;
   GPIO_PORTF_DIR_R = 0x0E;    // (c) make PF4 in (built-in button)
-  //GPIO_PORTF_AFSEL_R &= ~0x10;  //     disable alt funct on PF4
   GPIO_PORTF_DEN_R |= 0x1F;     //     enable digital I/O on PF4   
-  //GPIO_PORTF_PCTL_R &= ~0x000F0000; // configure PF4 as GPIO
   GPIO_PORTF_AMSEL_R = 0;       //     disable analog functionality on PF
  	GPIO_PORTF_PUR_R |= 0x10;     //     enable weak pull-up on PF4
  
@@ -41,36 +37,29 @@ void EdgeCounter_Init(void){
 }
 
 void GPIOPortF_Handler(void){
-	GPIO_PORTF_ICR_R = 0x10;
+	GPIO_PORTF_ICR_R = 0x10; 	// acknowledge flag4
 if((caseD)&&(!isPlay)){
 reset();
-} 	// acknowledge flag4
+} 
 	if(isPlay){
-	isPlay=false;
-	isPaused=!isPaused;
-	
+	  isPlay=false;
 		GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
-	LCD_Clear();
-	 LCD_OutString("Pause ");
-	 //snprintf (buffer , 10 , "%d",x);
+	  LCD_Clear();
+	  LCD_OutString("Pause ");
 		LCD_OutString(buffer); 
-	 SysTick_Wait10ms(20);
+	  SysTick_Wait10ms(100);
 		GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
-	//GPIO_PORTF_DATA_R ^= 0x04; 
-  //LCD_OutUHex(GPIO_PORTF_DATA_R);
-	 //SysTick_Wait10ms(20);
 		while(1){
 				GPIO_PORTF_DATA_R=GPIO_PORTF_DATA_R ^0x0E;
-			 SysTick_Wait10ms(2);
-			
-		if(!(GPIO_PORTF_DATA_R&0x10)){
-			
-		isPlay=false;
-			LEDS_OFF ();
-		break;}
-		if((!(GPIO_PORTF_DATA_R&1))&&(GPIO_PORTE_DATA_R&0x10)){
-		isPaused=false;
+			  SysTick_Wait10ms(10);
+	    	if(!(GPIO_PORTF_DATA_R&0x10)){
+		    isPlay=false;
+			  LEDS_OFF ();
+		    break;
+				}
+		  if((!(GPIO_PORTF_DATA_R&1))&&(GPIO_PORTE_DATA_R&0x10)){
 			isPlay=true;
+			LEDS_ON ();
 			break;
 		}}
 		}
