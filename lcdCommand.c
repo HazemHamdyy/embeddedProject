@@ -28,15 +28,22 @@
 
 void LCD_command(unsigned int command) { 
 	
+	/*****************************************************************************
+	*
+	*		This function, First allow data pins of the LCD to accept a command 
+	*		then it sends the given command.
+	*
+	******************************************************************************/
+	
 	GPIO_PORTA_DATA_R = 0;								// Set RS to 0 to enable Command Register and RW to 0 to write to the LCD
 	GPIO_PORTB_DATA_R = command;
 	GPIO_PORTA_DATA_R = 0x80;
-	SysTick_Wait1microsec(5);
+	SysTick_Wait1microsec(1);
 	GPIO_PORTA_DATA_R = 0x00;              	// High to Low pulse to push the command to the LCD
 	if (command < 4) 
-		SysTick_Wait10ms(10);                  	     	// Command 1 and 2 needs up to 1.64ms 
+		SysTick_Wait10ms(2);                  	     	// Command 1 and 2 needs up to 1.64ms 
 	else             
-		SysTick_Wait10ms(40);                 	     	// All others 40 us
+		SysTick_Wait10ms(8);                 	     	// All others 40 us
 
 }
 

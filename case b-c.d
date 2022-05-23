@@ -7,3 +7,4 @@
 .\case b-c.o: systick.h
 .\case b-c.o: counting.h
 .\case b-c.o: stateEnum.h
+.\case b-c.o: tm4c123gh6pm.h
